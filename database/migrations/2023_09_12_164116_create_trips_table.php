@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('trips', function (Blueprint $table) {
+            $table->id();
+            $table->string('destination');
+            $table->string('slug')->unique();
+            $table->string('airlines');
+            $table->string('transit');
+            $table->dateTime('departure_date');
+            $table->dateTime('return_date');
+            $table->decimal('price', 10, 2);
+            $table->text('include')->nullable();
+            $table->text('exclude')->nullable();
+            $table->text('description');
+            $table->string('image_path')->nullable();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('trips');
+
+        Schema::table('trips', function (Blueprint $table) {
+            // Drop the image column if you need to rollback the migration
+            $table->dropColumn('image_path');
+        });
+    }
+};
