@@ -35,7 +35,7 @@ Route::get('/admin/register', [Controller::class, 'showAdminRegistration'])->nam
 // Route for Admin Storing Data
 Route::post('/admin/register', [AdminRegisterController::class, 'register'])->name('admin.register');
 
-Route::middleware(['web', 'auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::get('/destination/japan', [TripController::class, 'showJapan'])->name('destination.japan');
 
     Route::get('/destination/switzerland', [TripController::class, 'showSwitzerland'])->name('destination.switzerland');
@@ -51,7 +51,7 @@ Route::middleware(['web', 'auth'])->group(function () {
     Route::get('/trip/{slug}', 'TripController@show')->name('trip.show');
 });
 
-Route::middleware(['web', 'auth:admin'])->group(function () {
+Route::middleware(['middleware' => 'adminauth'])->group(function () {
     Route::get('/admin-index', [AdminController::class, 'showAdminIndex'])->name('admin.index');
 
     Route::post('/admin/trips', [AdminController::class, 'store'])->name('admin.trips.store');

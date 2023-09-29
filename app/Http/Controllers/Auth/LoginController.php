@@ -32,10 +32,10 @@ class LoginController extends Controller
         $user = User::where('email', $request->email)->first();
         $admin = Admin::where('email', $request->email)->first();
 
-        if($user && Hash::check($request->password, $user->password)){
+        if ($user && Hash::check($request->password, $user->password)) {
             Auth::guard('web')->login($user);
             return redirect()->route('index');
-        } elseif ($admin && Hash::check($request->password, $admin->password)){
+        } elseif ($admin && Hash::check($request->password, $admin->password)) {
             Auth::guard('admin')->login($admin);
             return redirect()->route('admin.index');
         } else {

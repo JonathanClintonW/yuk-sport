@@ -43,7 +43,18 @@
                     <a href="{{ route('destination') }}"><span class="link-underline">{{ __('DESTINATION') }}</span></a>
                 </li>
 
-                @auth
+                @auth('web')
+                    <li class="pl-4">
+                        <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
+                                class="link-underline">
+                                {{ __('LOGOUT') }}</span>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </li>
+                    @elseauth('admin')
                     <li class="pl-4">
                         <a href="{{ route('logout') }}"
                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
@@ -90,7 +101,17 @@
                     </ul>
                 </div>
                 <div class="mt-auto">
-                    @auth
+                    @auth('web')
+                        <div class="pt-6">
+                            <a href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
+                                    class="block px-4 py-3 mb-2 text-sm text-center font-semibold hover:scale-105 duration-300 ease-in-out shadow-xl shadow-indigo-400/40 bg-gradient-to-r from-secondary-color to-primary-color text-text-light rounded-md">
+                                    {{ __('LOGOUT') }}</span></a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </div>
+                        @elseauth('admin')
                         <div class="pt-6">
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span
