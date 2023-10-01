@@ -10,7 +10,12 @@ class AdminController extends Controller
 {
     public function showAdminIndex()
     {
-        return view('admin-index');
+        return view('/admin/admin-index');
+    }
+
+    public function showManageProduct()
+    {
+        return view('/admin/manage-product');
     }
 
     public function store(Request $request)

@@ -27,4 +27,10 @@ class Controller extends BaseController
 
         return view('destination');
     }
+
+    public function showAbout()
+    {
+
+        return view('about');
+    }
 }

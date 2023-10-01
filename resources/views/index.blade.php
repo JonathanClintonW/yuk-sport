@@ -34,6 +34,7 @@
                 style="background-image: url('{{ asset('images/japan-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Japan</h3>
+                    <p class="text-xs text-zinc-300">Book Now</p>
                 </div>
             </a>
             <a href=""
@@ -41,6 +42,7 @@
                 style="background-image: url('{{ asset('images/switzerland-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Switzerland</h3>
+                    <p class="text-xs text-zinc-300">Book Now</p>
                 </div>
             </a>
             <a href=""
@@ -48,6 +50,7 @@
                 style="background-image: url('{{ asset('images/france-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">France</h3>
+                    <p class="text-xs text-zinc-300">Book Now</p>
                 </div>
             </a>
             <a href=""
@@ -55,6 +58,7 @@
                 style="background-image: url('{{ asset('images/iceland-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Iceland</h3>
+                    <p class="text-xs text-zinc-300">Book Now</p>
                 </div>
             </a>
             <a href=""
@@ -62,6 +66,7 @@
                 style="background-image: url('{{ asset('images/bali-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Indonesia</h3>
+                    <p class="text-xs text-zinc-300">Book Now</p>
                 </div>
             </a>
             <a href=""
@@ -69,6 +74,7 @@
                 style="background-image: url('{{ asset('images/greece-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Greece</h3>
+                    <p class="text-xs text-zinc-300">Book Now</p>
                 </div>
             </a>
         </div>
