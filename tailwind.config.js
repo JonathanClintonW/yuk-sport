@@ -5,6 +5,7 @@ export default {
     "./resources/**/*.js",
     "./resources/**/*.vue",
   ],
+  darkMode:'class',
   theme: {
     extend: {
       screens: {
@@ -37,7 +38,9 @@ export default {
         'secondary-color': '#330066',
         'dark-primary-color': '#1d152d',
         'dark-secondary-color': '#5e0034',
+        'dark-background': '#111111',
         'text-light': '#FFFFFF',
+        'text-gray': '#CFCFCF',
         'black-color': '#000000'
       },
 

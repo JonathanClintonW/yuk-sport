@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="h-screen relative">
+    <div class="h-screen relative ">
         <h1
             class="absolute select-none inset-0 flex items-center justify-center font-bold text-text-light z-10 text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-all duration-200">
             ASTRO TRAVEL</h1>
@@ -10,17 +10,17 @@
         </div>
     </div>
 
-    <div class="flex flex-col items-center select-none pb-4 mb-5">
+    <div class="flex flex-col items-center select-none pb-4 mb-5 ">
         <div class="flex flex-col items-center">
             <h1
-                class="mt-2 sm:mb-4 py-0 px-0 w-4/5 sm:w-full text-center text-2xl font-bold sm:text-4xl transition-all duration-200 text-black-color antialiased">
+                class="mt-2 mb-4 py-0 px-0 w-4/5 sm:w-full text-center text-2xl font-bold sm:text-4xl transition-all duration-200 text-black-color dark:text-text-light antialiased">
                 Start Planning Your Next Trip
             </h1>
         </div>
 
         <div class="grid mb-12 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4">
             <a href="{{ route('destination') }}"
-                class="block w=64 md:row-span-3 xl:row-span-2 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-105"
+                class="block w=64 row-span-2 md:row-span-3 xl:row-span-2 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-105"
                 style="background-image: url('{{ asset('images/palm-img.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <p>Up To</p>
@@ -30,7 +30,7 @@
             </a>
 
             <a href="{{ route('destination.japan', ['slug' => 'japan']) }}"
-                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-110"
+                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-110"
                 style="background-image: url('{{ asset('images/japan-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Japan</h3>
@@ -38,7 +38,7 @@
                 </div>
             </a>
             <a href=""
-                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-110"
+                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-110"
                 style="background-image: url('{{ asset('images/switzerland-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Switzerland</h3>
@@ -46,7 +46,7 @@
                 </div>
             </a>
             <a href=""
-                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-110"
+                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-110"
                 style="background-image: url('{{ asset('images/france-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">France</h3>
@@ -54,7 +54,7 @@
                 </div>
             </a>
             <a href=""
-                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-110"
+                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-110"
                 style="background-image: url('{{ asset('images/iceland-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Iceland</h3>
@@ -62,7 +62,7 @@
                 </div>
             </a>
             <a href=""
-                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-110"
+                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-110"
                 style="background-image: url('{{ asset('images/bali-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Indonesia</h3>
@@ -70,7 +70,7 @@
                 </div>
             </a>
             <a href=""
-                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 shadow-2xl duration-200 hover:scale-110"
+                class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-2xl duration-200 hover:scale-110"
                 style="background-image: url('{{ asset('images/greece-main.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">Greece</h3>
@@ -80,28 +80,28 @@
         </div>
 
         <a href="{{ route('destination') }}"
-            class="custom-gradient-bg w-40 h-10 text-base text-text-light text-center flex items-center justify-center rounded duration-300 transition ease-out hover:scale-110 shadow-stone-500 shadow-2xl hover:shadow-secondary-color">
+            class="custom-gradient-bg w-40 h-10 text-base text-text-light text-center flex items-center justify-center rounded duration-300 transition ease-out hover:scale-110 shadow-violet-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color">
             Explore More
         </a>
     </div>
 
-    <div class="h-screen">
+    <div class="">
 
         <div class="flex flex-col justify-center align-center items-center w-screen">
             <div>
                 <h1
-                    class="mt-2 mb-4 py-0 px-0 w-4/5 sm:w-full text-2xl sm:text-3xl font-bold transition-all duration-200 text-black-color antialiased">
+                    class="mt-2 mb-4 py-0 px-0 w-4/5 sm:w-full text-2xl sm:text-3xl font-bold transition-all duration-200 text-black-color dark:text-text-light antialiased">
                     Latest Travel Blog
                 </h1>
             </div>
 
             <div
-                class="flex flex-col lg:flex-row w-64 lg:w-3/5 max-w-3xl align-center justify-center items-center lg:items-start px-2.5 py-2.5 mb-4 transition-all duration-400 shadow-[0_5px_55px_0_rgba(0,0,0,0.3)] shadow-stone-400 rounded-2xl">
+                class="flex flex-col lg:flex-row w-64 lg:w-3/5 max-w-3xl align-center justify-center items-center dark:bg-[#222222] lg:items-start px-2.5 py-2.5 mb-4 transition-all duration-400 shadow-[0_5px_55px_0_rgba(0,0,0,0.3)] shadow-stone-400 dark:shadow-stone-900 rounded-2xl">
                 <img src="{{ asset('images/moraine-lake-canada.jpg') }}" alt="Moraine Lake Canada"
                     class="w-56 rounded-2xl mt-1.5 lg:mt-0">
                 <div class="subpixel-antialiased mx-3 my-2">
-                    <h1 class="text-lg font-bold">Moraine Lake Canada</h1>
-                    <article class="text-xs lg:text-base text-justify mt-2">Moraine Lake, nestled in the Canadian Rockies,
+                    <h1 class="text-lg font-bold text-black-color dark:text-text-light">Moraine Lake Canada</h1>
+                    <article class="text-xs lg:text-base text-justify mt-2 text-black-color dark:text-text-gray">Moraine Lake, nestled in the Canadian Rockies,
                         is a nature lover's paradise. Its
                         mesmerizing
                         turquoise waters, framed by ten majestic peaks, offer a surreal and serene experience. Whether
@@ -113,12 +113,12 @@
             </div>
 
             <div
-                class="flex flex-col lg:flex-row w-64 lg:w-3/5 max-w-3xl align-center justify-center items-center lg:items-start px-2.5 py-2.5 mb-4 transition-all duration-400 shadow-[0_5px_55px_0_rgba(0,0,0,0.3)] shadow-stone-400 rounded-2xl">
+                class="flex flex-col lg:flex-row w-64 lg:w-3/5 max-w-3xl align-center justify-center items-center dark:bg-[#222222] lg:items-start px-2.5 py-2.5 mb-4 transition-all duration-400 shadow-[0_5px_55px_0_rgba(0,0,0,0.3)] shadow-stone-400 dark:shadow-stone-900 rounded-2xl">
                 <img src="{{ asset('images/san-martino-italia.jpg') }}" alt="Moraine Lake Canada"
                     class="w-56 rounded-2xl mt-1.5 lg:mt-0">
                 <div class="subpixel-antialiased mx-3 my-2">
-                    <h1 class="text-lg font-bold">San Martino Italia</h1>
-                    <article class="text-xs lg:text-base text-justify mt-2">San Martino, located in the Italian Dolomites,
+                    <h1 class="text-lg font-bold text-black-color dark:text-text-light">San Martino Italia</h1>
+                    <article class="text-xs lg:text-base text-justify mt-2 text-black-color dark:text-text-gray">San Martino, located in the Italian Dolomites,
                         offers stunning natural beauty and rich cultural heritage. The majestic Pale di San Martino mountain
                         range provides a breathtaking backdrop for outdoor enthusiasts. Whether you're hiking, exploring
                         ancient villages, or enjoying authentic Italian cuisine, San Martino blends nature and culture

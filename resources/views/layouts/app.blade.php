@@ -18,17 +18,36 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @vite('resources/css/app.css')
 
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
 
 <body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth">
-    <div id="app">
+    <div id="app" class="dark:bg-dark-background">
         <nav
             class="bg-white relative translate-y-[14px] px-3.5 mx-6 rounded-2xl flex h-12 items-center justify-between z-10">
 
             <a class="font-bold" href="{{ url('/') }}">
                 ASTRO TRAVEL
             </a>
-            <div class="lg:hidden">
+            
+            <div class="lg:hidden flex">
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400  focus:outline-none focus:ring-0  rounded-lg text-sm p-2.5">
+                   
+                    <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" stroke-width="1.5" stroke="#330066" class="hidden w-6 h-6 transition-all duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                      </svg>
+
+                      <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" stroke-width="1.5" stroke="#330066" class="hidden w-6 h-6 transition-all duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                      </svg>
+                </button>
                 <button class="navbar-burger flex items-center text-black-color p-3">
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -78,13 +97,29 @@
                         <a href="{{ route('register') }}"><span class="link-underline">{{ __('REGISTER') }}</span></a>
                     </li>
                 @endauth
+                <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400  focus:outline-none focus:ring-0  rounded-lg text-sm p-2.5">
+                   
+                    <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" stroke-width="1.5" stroke="#330066" class="hidden w-6 h-6 transition-all duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                      </svg>
+
+                      <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="#000000" viewBox="0 0 24 24" stroke-width="1.5" stroke="#330066" class="hidden w-6 h-6 transition-all duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                      </svg>
+                </button>
             </ul>
+
+            
         </nav>
+
+
         <div class="navbar-menu relative z-50 hidden">
             <div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+            
             <nav
                 class="fixed slide-in top-0 left-0 bottom-0 flex flex-col w-10/12 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
                 <div class="flex items-center justify-end mb-8">
+                    
                     <button class="navbar-close">
                         <svg class="h-6 w-6 text-gray-500 cursor-pointer hover:text-gray-500"
                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -92,7 +127,9 @@
                                 d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
+                    
                 </div>
+                
                 <div>
                     <ul>
                         <li class="mb-1">
