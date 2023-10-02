@@ -14,14 +14,14 @@
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
                     <label for="email" class="font-medium">{{ __('Email Address') }}</label>
                     <input id="email" type="email"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg"
                         name="email" value="{{ old('email') }}" autocomplete="email">
                 </div>
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
                     <label for="password" class="font-medium">{{ __('Password') }}</label>
                     <input id="password" type="password"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg"
                         name="password" required autocomplete="current-password">
 
                 </div>

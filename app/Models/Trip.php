@@ -20,7 +20,7 @@ class Trip extends Model
         'include',
         'exclude',
         'description',
-        'image_path',
+        'pdf_path',
     ];
 
     public function order()

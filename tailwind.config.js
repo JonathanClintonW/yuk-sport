@@ -35,6 +35,8 @@ export default {
       colors: {
         'primary-color': '#9D4CCC',
         'secondary-color': '#330066',
+        'dark-primary-color': '#1d152d',
+        'dark-secondary-color': '#5e0034',
         'text-light': '#FFFFFF',
         'black-color': '#000000'
       },

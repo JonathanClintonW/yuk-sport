@@ -1,43 +1,55 @@
 @extends('layouts.admin-app')
 @section('content')
     <div class="container mt-10">
-        <div class="p-4 sm:ml-64">
-            <h1>Admin Panel</h1>
-
-            <form action="{{ route('admin.trips.store') }}" class="mt-10"method="POST" enctype="multipart/form-data">
+        <div class="p-4 sm:ml-64 border-2 rounded-lg border-dark-primary-color">
+            <h1 class="text-xl font-bold mb-3">Add Destination</h1>
+            <hr class="w-80% h-1 bg-dark-primary-color mx-auto mb-3">
+            <form action="{{ route('admin.trips.store') }}" class="mt-3 grid"method="POST" enctype="multipart/form-data">
                 @csrf
 
-                <label for="destination">Destination:</label>
-                <input type="text" name="destination" id="destination" required>
+                <label for="destination" class="font-semibold">Destination:</label>
+                <input type="text" name="destination" id="destination"
+                    class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0" required>
 
-                <label for="airlines">Airlines:</label>
-                <input type="text" name="airlines" id="airlines" required>
+                <label for="slug" class="font-semibold">Custom Slug:</label>
+                <input type="text" name="slug" id="slug" class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0"
+                    required>
 
-                <label for="transit">Transit:</label>
-                <input type="text" name="transit" id="transit" required>
+                <label for="airlines" class="font-semibold">Airlines:</label>
+                <input type="text" name="airlines" id="airlines" class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0"
+                    required>
 
-                <label for="departure_date">Departure Date:</label>
-                <input type="datetime-local" name="departure_date" id="departure_date" required>
+                <label for="transit" class="font-semibold">Transit:</label>
+                <input type="text" name="transit" id="transit" class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0"
+                    required>
 
-                <label for="return_date">Return Date:</label>
-                <input type="datetime-local" name="return_date" id="return_date" required>
+                <label for="departure_date" class="font-semibold">Departure Date:</label>
+                <input type="datetime-local" name="departure_date" id="departure_date"
+                    class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0" required>
 
-                <label for="price">Price:</label>
-                <input type="number" name="price" id="price" step="0.01" required>
+                <label for="return_date" class="font-semibold">Return Date:</label>
+                <input type="datetime-local" name="return_date" id="return_date"
+                    class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0" required>
 
-                <label for="include">Include:</label>
-                <textarea name="include" id="include"></textarea>
+                <label for="price" class="font-semibold">Price:</label>
+                <input type="number" name="price" id="price" step="0.01"
+                    class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0" required>
 
-                <label for="exclude">Exclude:</label>
-                <textarea name="exclude" id="exclude"></textarea>
+                <label for="include" class="font-semibold">Include:</label>
+                <textarea name="include" id="include" class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0"></textarea>
 
-                <label for="description">Description:</label>
-                <textarea name="description" id="description" required></textarea>
+                <label for="exclude" class="font-semibold">Exclude:</label>
+                <textarea name="exclude" id="exclude" class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0"></textarea>
 
-                <label for="image">Image:</label>
-                <input type="file" name="image" id="image" required>
+                <label for="description" class="font-semibold">Description:</label>
+                <textarea name="description" id="description" class="mb-3 focus:border-dark-secondary-color rounded focus:ring-0" required></textarea>
 
-                <button type="submit">Create Trip</button>
+                <label for="pdf" class="font-semibold" >PDF:</label>
+                <input type="file" name="pdf" id="pdf" accept=".pdf" class="mb-3 rounded focus:ring-0 " required>
+                
+                <div class="flex justify-center">
+                    <button type="submit" class="custom-dark-gradient-bg py-2 px-4 rounded text-text-light">Create Trip</button>
+                </div>
             </form>
         </div>
     </div>

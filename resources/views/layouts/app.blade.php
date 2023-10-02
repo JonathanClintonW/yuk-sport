@@ -103,6 +103,10 @@
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
                                 href="{{ route('destination') }}">DESTINATION</a>
                         </li>
+                        <li class="mb-1">
+                            <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
+                                href="{{ route('about') }}">ABOUT</a>
+                        </li>
                     </ul>
                 </div>
                 <div class="mt-auto">
@@ -143,7 +147,9 @@
         <main class="py-0">
             @yield('content')
         </main>
+        
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
 </body>
 

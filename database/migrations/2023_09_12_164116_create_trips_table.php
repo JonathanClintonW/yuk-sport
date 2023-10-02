@@ -23,7 +23,7 @@ return new class extends Migration
             $table->text('include')->nullable();
             $table->text('exclude')->nullable();
             $table->text('description');
-            $table->string('image_path')->nullable();
+            $table->string('pdf_path')->nullable();
         });
     }
 
@@ -34,9 +34,6 @@ return new class extends Migration
     {
         Schema::dropIfExists('trips');
 
-        Schema::table('trips', function (Blueprint $table) {
-            // Drop the image column if you need to rollback the migration
-            $table->dropColumn('image_path');
-        });
+        
     }
 };

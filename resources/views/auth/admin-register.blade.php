@@ -17,7 +17,7 @@
 
 
                     <input id="name" type="text"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg @error('name') is-invalid @enderror"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('name') is-invalid @enderror"
                         name="name" value="{{ old('name') }}" required autocomplete="name">
 
                     @error('name')
@@ -33,7 +33,7 @@
 
 
                     <input id="address" type="text"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg @error('address') is-invalid @enderror"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('address') is-invalid @enderror"
                         name="address" value="{{ old('address') }}" required autocomplete="address">
 
                     @error('address')
@@ -49,7 +49,7 @@
 
 
                     <input id="phone" type="text"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg @error('phone') is-invalid @enderror"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('phone') is-invalid @enderror"
                         name="phone" value="{{ old('phone') }}" required autocomplete="phone">
 
                     @error('phone')
@@ -65,7 +65,7 @@
 
 
                     <input id="email" type="email"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg @error('email') is-invalid @enderror"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('email') is-invalid @enderror"
                         name="email" value="{{ old('email') }}" required autocomplete="email">
 
                     @error('email')
@@ -81,7 +81,7 @@
 
 
                     <input id="password" type="password"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg @error('password') is-invalid @enderror"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('password') is-invalid @enderror"
                         name="password" required autocomplete="new-password">
 
                     @error('password')
@@ -97,7 +97,7 @@
 
 
                     <input id="password-confirm" type="password"
-                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:outline-0 rounded-lg"
+                        class="px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg"
                         name="password_confirmation" required autocomplete="new-password">
 
                 </div>

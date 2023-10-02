@@ -23,6 +23,7 @@ class AdminController extends Controller
         // Validate the form data
         $validatedData = $request->validate([
             'destination' => 'required|string',
+            'slug' => 'required|string',
             'airlines' => 'required|string',
             'transit' => 'required|string',
             'departure_date' => 'required|date',
@@ -31,18 +32,21 @@ class AdminController extends Controller
             'include' => 'nullable|string',
             'exclude' => 'nullable|string',
             'description' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', // Adjust the image validation rules as needed
+            'pdf' => 'required|mimes:pdf|max:2048', // Adjust the image validation rules as needed
         ]);
 
+        $slug = str_replace(' ', '-', $validatedData['slug']);
+
         // Store the image
-        $imagePath = $request->file('image')->store('trips', 'public');
+        $pdfPath = $request->file('pdf')->store('pdfs', 'public');
 
         // Create a new Trip instance
         $trip = new Trip($validatedData);
-        $trip->image_path = $imagePath; // Save the image path in the database
+        $trip->slug = $slug;
+        $trip->pdf_path = $pdfPath; // Save the image path in the database
         $trip->save();
 
         // Redirect back with a success message or do any additional processing
-        return redirect()->route('admin.index')->with('success', 'Trip created successfully');
+        return redirect()->route('admin.manage')->with('success', 'Trip created successfully');
     }
 }

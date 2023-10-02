@@ -1,7 +1,7 @@
 import './bootstrap';
 
 document.addEventListener('DOMContentLoaded', function() {
-    // open
+    // Open burger menu
     const burger = document.querySelectorAll('.navbar-burger');
     const menu = document.querySelectorAll('.navbar-menu');
 
@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // close
+    // Close burger menu
     const close = document.querySelectorAll('.navbar-close');
     const backdrop = document.querySelectorAll('.navbar-backdrop');
 
@@ -38,4 +38,5 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     }
+
 });
