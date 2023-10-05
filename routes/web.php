@@ -39,7 +39,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/destination/greece', [TripController::class, 'showGreece'])->name('destination.greece');
 
-    Route::get('/trip/{slug}', 'TripController@show')->name('trip.show');
+    Route::get('/destination/{slug}', [TripController::class, 'show'])->name('trip.show');
 });
 
 Route::middleware(['middleware' => 'adminauth'])->group(function () {

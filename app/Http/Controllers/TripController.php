@@ -45,9 +45,9 @@ class TripController extends Controller
         $trip = DB::table('trips')->where('slug', $slug)->first();
 
         if (!$trip) {
-            abort(404); // Handle if the trip is not found
+            abort(404);
         }
 
-        return view('trip.show', compact('trip'));
+        return view('destination.show', compact('trip'));
     }
 }

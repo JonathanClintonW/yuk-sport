@@ -23,7 +23,10 @@ return new class extends Migration
             $table->text('include')->nullable();
             $table->text('exclude')->nullable();
             $table->text('description');
+            $table->integer('total_pax');
+            $table->string('images');
             $table->string('pdf_path')->nullable();
+            
         });
     }
 

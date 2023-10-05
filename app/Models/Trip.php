@@ -20,6 +20,8 @@ class Trip extends Model
         'include',
         'exclude',
         'description',
+        'total_pax',
+        'images',
         'pdf_path',
     ];
 
