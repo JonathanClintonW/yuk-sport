@@ -34,11 +34,19 @@ export default {
       },
 
       colors: {
+        // Light Color
         'primary-color': '#9D4CCC',
         'secondary-color': '#330066',
+
+        // Dark Color
         'dark-primary-color': '#1d152d',
         'dark-secondary-color': '#5e0034',
-        'dark-background': '#111111',
+
+        // Dark Background
+        'dark-primary-bg': '#100F10',
+        'dark-secondary-bg': '#1B1B1B',
+
+        // Text Color
         'text-light': '#FFFFFF',
         'text-gray': '#CFCFCF',
         'black-color': '#000000'
