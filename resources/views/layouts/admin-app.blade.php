@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth">
+<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth text-black-color">
     <div id="app">
         <div>
             <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
@@ -46,7 +46,7 @@
             <aside id="default-sidebar"
                 class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar">
-                <div class="h-full px-3 py-4 overflow-y-auto custom-dark-gradient-bg">
+                <div class="h-full px-3 py-4 overflow-y-auto custom-gradient-bg">
                     <ul class="space-y-2 font-medium">
                         <li class="mb-3">
                             <a href="/admin-index"
