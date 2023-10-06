@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth">
+<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth text-black-color">
     <div id="app" class="dark:bg-dark-primary-bg">
         <nav
             class="bg-white relative translate-y-[14px] px-3.5 mx-6 rounded-2xl flex h-12 items-center justify-between z-10">

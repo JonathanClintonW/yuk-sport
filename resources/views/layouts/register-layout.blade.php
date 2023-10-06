@@ -30,7 +30,7 @@
     </script>
 </head>
 
-<body class="font-poppins">
+<body class="font-poppins text-black-color">
     <div class="flex h-screen select-none" id="app">
 
         @yield('content')
