@@ -15,11 +15,21 @@
                 @if ($japanTrips->isEmpty())
                     <p>No trips available.</p>
                 @else
-                    <div class="grid grid-cols-3 text-center justify-items-center">
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-center align-center justify-items-center">
                         @foreach ($japanTrips as $trip)
-                            <div class="gap-2">
+                            
+                            <div class="mx-3 mb-8">
+                                <div>
+                                    @if (!empty($trip->images))
+                                        @foreach (json_decode($trip->images) as $image)
+                                            <img src="{{ asset('images/' . $image) }}" alt="{{ $trip->destination }}"
+                                                class="w-64 h-80 object-cover">
+                                        @endforeach
+                                    @endif
+                                </div>
                                 <div class="">
-                                    <a href="{{ route('trip.show', ['slug' => $trip->slug]) }}" class="dark:text-text-light font-bold">
+                                    <a href="{{ route('trip.show', ['slug' => $trip->slug]) }}"
+                                        class="dark:text-text-light font-bold">
                                         {{ $trip->slug }}
                                     </a>
                                 </div>
@@ -31,7 +41,8 @@
                                     {{ \Carbon\Carbon::parse($trip->return_date)->format('Y-m-d') }})
                                 </div>
                                 <div class="text-center mx-3 mt-3 py-2 custom-gradient-bg rounded-md">
-                                    <a href="{{ route('trip.show', ['slug' => $trip->slug]) }}" class="dark:text-text-light">View Details</a>
+                                    <a href="{{ route('trip.show', ['slug' => $trip->slug]) }}" class="text-text-light">View
+                                        Details</a>
                                 </div>
                             </div>
                         @endforeach

@@ -48,8 +48,9 @@ export default {
 
         // Text Color
         'text-light': '#FFFFFF',
-        'text-gray': '#CFCFCF',
-        'black-color': '#000000'
+        'text-gray': '#C1C2C7',
+        'text-dark-gray': '#393A3F',
+        'black-color': '#000000',
       },
 
       boxShadow: {
