@@ -183,7 +183,7 @@
             </a>
             <a href=""
                 class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-900 shadow-xl duration-200 hover:scale-110"
-                style="background-image: url('{{ asset('images/france-main.jpg') }} ');">
+                style="background-image: url('{{ asset('images/france-box.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">France</h3>
                     <p class="text-xs text-zinc-300">Book Now</p>
@@ -215,7 +215,7 @@
             </a>
         </div>
     </div>
-    
+
     <div class="flex flex-col items-center justify-items-center mx-5 mb-5 select-none">
         <h3 class="text-primary-color font-semibold mb-3">SPECIAL TRAVEL PACKAGES</h3>
         <article class="flex flex-col items-center justify-items-center">
@@ -232,7 +232,7 @@
         <div class="mb-4 grid select-none ml-5">
             <div class="max-w-xl mb-5">
                 <article class="mb-4">
-                    <h4 class="font-semibold text-xl mb-2">Romantic Travel Packages in Bali</h4>
+                    <h4 class="font-semibold text-xl mb-2 dark:text-text-light">Romantic Travel Packages in Bali</h4>
                     <p class="text-sm font-medium text-text-dark-gray/[.8] dark:text-text-gray break-words">Experience an
                         unforgettable romance on the exotic island of Bali.</p>
                 </article>
@@ -258,7 +258,7 @@
             </div>
             <div class="max-w-xl mb-5">
                 <article class="mb-4">
-                    <h4 class="font-semibold text-xl mb-2">Nature Adventure Packages in Patagonia</h4>
+                    <h4 class="font-semibold text-xl mb-2 dark:text-text-light">Nature Adventure Packages in Patagonia</h4>
                     <p class="text-sm font-medium text-text-dark-gray/[.8] dark:text-text-gray break-words">Enjoy thrilling
                         outdoor adventures in the natural beauty of Patagonia</p>
                 </article>
@@ -284,7 +284,7 @@
             </div>
             <div class="max-w-xl mb-5">
                 <article class="mb-4">
-                    <h4 class="font-semibold text-xl mb-2">Family Vacation Packages in Greece</h4>
+                    <h4 class="font-semibold text-xl mb-2 dark:text-text-light">Family Vacation Packages in Greece</h4>
                     <p class="text-sm font-medium text-text-dark-gray/[.8] dark:text-text-gray break-words">Give your
                         family an unforgettable vacation in the beautiful country of Greece.</p>
                 </article>

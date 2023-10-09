@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="h-screen">
     <div class="mt-20 flex flex-col items-center select-none pb-4">
         <section class="flex flex-col items-center">
             <h1
@@ -56,7 +57,7 @@
             </a>
             <a href="{{ route('destination.france') }}"
                 class="block w-64 h-64 bg-cover bg-center rounded-lg overflow-hidden relative shadow-stone-500 dark:shadow-stone-800 shadow-2xl duration-200 hover:scale-110"
-                style="background-image: url('{{ asset('images/france-main.jpg') }} ');">
+                style="background-image: url('{{ asset('images/france-box.jpg') }} ');">
                 <div class="absolute bottom-0 left-0 w-full text-text-light p-4">
                     <h3 class="text-2xl font-semibold">France</h3>
                 </div>
@@ -84,4 +85,5 @@
             </a>
         </div>
     </div>
+</div>
 @endsection

@@ -18,19 +18,21 @@ class Controller extends BaseController
 
     public function showAdminRegistration()
     {
-
         return view('auth.admin-register');
     }
 
     public function showDestination()
     {
-
         return view('destination');
     }
 
     public function showAbout()
     {
-
         return view('about');
+    }
+
+    public function showProfile()
+    {
+        return view('user.profile');
     }
 }

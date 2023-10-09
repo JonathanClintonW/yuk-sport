@@ -17,27 +17,33 @@ class TripController extends Controller
 
     public function showSwitzerland()
     {
-        return view('destination.switzerland');
+        $switzerlandTrips = DB::table('trips')->where('destination', 'Switzerland')->get();
+        return view('destination.switzerland', compact('switzerlandTrips'));
     }
 
     public function showFrance()
     {
-        return view('destination.france');
+        $franceTrips = DB::table('trips')->where('destination', 'France')->get();
+        return view('destination.france', compact('franceTrips'));
     }
 
     public function showIceland()
     {
-        return view('destination.iceland');
+        $icelandTrips = DB::table('trips')->where('destination', 'Iceland')->get();
+
+        return view('destination.iceland', compact('icelandTrips'));
     }
 
     public function showIndonesia()
     {
-        return view('destination.indonesia');
+        $indonesiaTrips = DB::table('trips')->where('destination', 'Indonesia')->get();
+        return view('destination.indonesia', compact('indonesiaTrips'));
     }
 
     public function showGreece()
     {
-        return view('destination.greece');
+        $greeceTrips = DB::table('trips')->where('destination', 'Greece')->get();
+        return view('destination.greece', compact('greeceTrips'));
     }
 
     public function show($slug)

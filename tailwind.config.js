@@ -43,8 +43,8 @@ export default {
         'dark-secondary-color': '#5e0034',
 
         // Dark Background
-        'dark-primary-bg': '#100F10',
-        'dark-secondary-bg': '#1B1B1B',
+        'dark-primary-bg': '#040005',
+        'dark-secondary-bg': '#110015',
 
         // Text Color
         'text-light': '#FFFFFF',
@@ -64,7 +64,7 @@ export default {
     },
   },
   plugins: [
-
+    
   ],
 }
 

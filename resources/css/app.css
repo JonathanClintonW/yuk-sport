@@ -26,8 +26,11 @@
     background: linear-gradient(135deg, #330066, #9D4CCC); 
 }
 
-.custom-dark-gradient-bg {
-    background: linear-gradient(135deg, #1d152d, #5e0034); 
+.custom-gradient-text {
+    background: linear-gradient(135deg, #330066, #9D4CCC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .link-underline {

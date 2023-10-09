@@ -40,6 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/destination/greece', [TripController::class, 'showGreece'])->name('destination.greece');
 
     Route::get('/destination/{slug}', [TripController::class, 'show'])->name('trip.show');
+
+    Route::get('/user/profile', [Controller::class, 'showProfile'])->name('user.profile');
 });
 
 Route::middleware(['middleware' => 'adminauth'])->group(function () {
