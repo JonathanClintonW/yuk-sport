@@ -311,7 +311,7 @@
         </div>
         <div class=>
             <img src="{{ asset('images/patagonia-main.jpg') }}" alt="Patagonia Lake"
-                    class="h-96 rounded-2xl lg:mt-0">
+                    class="h-96 rounded-2xl lg:mt-0 transition-all duration-200 hover:scale-105">
         </div>
     </div>
 

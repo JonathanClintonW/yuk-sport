@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth text-black-color">
+<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth dark:bg-dark-primary-color">
     <div id="app">
         <div>
             <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"
@@ -43,14 +43,14 @@
                     </path>
                 </svg>
             </button>
+
             <aside id="default-sidebar"
                 class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar">
                 <div class="h-full px-3 py-4 overflow-y-auto custom-gradient-bg">
                     <ul class="space-y-2 font-medium">
-                        <li class="mb-3">
-                            <a href="/admin-index"
-                                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                        <li class="mb-3 flex">
+                            <a href="/admin-index" class="flex items-center p-2 rounded-lg text-white hover:bg-dark-primary-color group">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-6 h-6">
                                     <path fill-rule="evenodd"
@@ -60,16 +60,31 @@
                                         d="M12.75 3a.75.75 0 01.75-.75 8.25 8.25 0 018.25 8.25.75.75 0 01-.75.75h-7.5a.75.75 0 01-.75-.75V3z"
                                         clip-rule="evenodd" />
                                 </svg>
-
-
                                 <span class="ml-3 text-lg">DASHBOARD</span>
                             </a>
-                        </li>
+                            <button id="theme-toggle" type="button"
+                                    class="text-gray-500 dark:text-gray-400  focus:outline-none focus:ring-0  rounded-lg text-sm mx-auto">
 
+                                    <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF"
+                                        class="hidden w-6 h-6 transition-all duration-200">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                    </svg>
+
+                                    <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF"
+                                        class="hidden w-6 h-6 transition-all duration-200">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                    </svg>
+                                </button>
+                        </li>
+                        
                         <hr class="w-80% h-1 bg-white mx-auto mb-3">
                         <li class="mb-3">
                             <a href="{{ route('admin.manage') }}"
-                                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                                class="flex items-center p-2 rounded-lg text-white hover:bg-dark-primary-color group">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-6 h-6">
                                     <path fill-rule="evenodd"
@@ -84,7 +99,7 @@
                         <li class="mb-3">
                             <a href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                class="flex items-center p-2 rounded-lg text-white hover:bg-gray-700 group">
+                                class="flex items-center p-2 rounded-lg text-white hover:bg-dark-primary-color group">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
                                     class="w-6 h-6">
                                     <path fill-rule="evenodd"
