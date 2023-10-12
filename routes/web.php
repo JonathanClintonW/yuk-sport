@@ -10,7 +10,7 @@ use App\Http\Controllers\Auth\AdminRegisterController;
 
 Auth::routes();
 
-Route::get('/index', [HomeController::class, 'index'])->name('index');
+Route::get('/index', [Controller::class, 'showIndex'])->name('index');
 
 Route::get('/', [Controller::class, 'showIndex'])->name('index');
 

@@ -6,6 +6,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Http\Request;
+use App\Models\User;
 
 class Controller extends BaseController
 {
@@ -33,6 +35,9 @@ class Controller extends BaseController
 
     public function showProfile()
     {
-        return view('user.profile');
+        $user = User::find(auth()->user()->id); 
+        return view('user.profile', compact('user'));
     }
+
+
 }

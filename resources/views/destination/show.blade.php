@@ -54,7 +54,7 @@
         </div>
     </div>
     <div class="mx-10">
-        <div class="flex justify-around px-3 py-2 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
+        <div class="flex justify-evenly px-3 py-2 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
             <p class="font-semibold text-xl dark:text-text-light">DETAILS</p>
             <div class="inline-block w-0.5 self-stretch bg-black opacity-100 dark:opacity-50"></div>
             <p class="font-semibold text-xl dark:text-text-light">{{ $trip->slug }}</p>
