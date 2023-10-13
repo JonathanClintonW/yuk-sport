@@ -22,7 +22,6 @@ class Trip extends Model
         'description',
         'total_pax',
         'images',
-        'pdf_path',
     ];
 
     public function order()

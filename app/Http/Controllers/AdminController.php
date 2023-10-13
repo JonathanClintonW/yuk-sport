@@ -18,6 +18,18 @@ class AdminController extends Controller
         return view('/admin/manage-product');
     }
 
+    public function showAddProduct()
+    {
+        return view('/admin/add-product');
+    }
+
+    public function showListProduct()
+    {
+        $trips = Trip::all();
+
+        return view('/admin/list-product', compact('trips'));
+    }
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -33,25 +45,23 @@ class AdminController extends Controller
             'description' => 'required|string',
             'total_pax' => 'required|integer|min:1',
             'image.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048', 
-            'pdf' => 'required|mimes:pdf|max:2048', 
+            
         ]);
 
         $slug = str_replace(' ', '-', $validatedData['slug']);
-        $pdfPath = $request->file('pdf')->store('pdfs', 'public');
-
         $trip = new Trip($validatedData);
         if ($request->hasFile('images')) {
             $images = [];
             foreach ($request->file('images') as $image) {
                 $imageName = time() . '_' . $image->getClientOriginalName();
-                $image->move(public_path('images'), $imageName);
+                $image->move(public_path('content-images'), $imageName);
                 $images[] = $imageName;
             }
             $trip->images = json_encode($images);
         }
-        $trip->pdf_path = $pdfPath;
         $trip->save();
 
         return redirect()->route('admin.manage')->with('success', 'Trip created successfully');
     }
+    
 }

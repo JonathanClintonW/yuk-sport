@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-items-center mt-20 mx-10 select-none">
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items center justify-items-center mt-20 mx-10 select-none">
         <article class="max-w-3xl mb-4">
             <h1
                 class="font-bold mb-4 text-5xl md:text-6xl lg:text-7xl xl:text-9xl transition-all duration-200 custom-gradient-text uppercase">
@@ -15,13 +15,13 @@
                 @foreach (json_decode($trip->images) as $image)
                     <div
                         class="p-2 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                        <img src="{{ asset('images/' . $image) }}" alt="{{ $trip->destination }}"
+                        <img src="{{ asset('content-images/' . $image) }}" alt="{{ $trip->destination }}"
                             class=" w-80 h-[500px] object-cover rounded-2xl">
                     </div>
                 @endforeach
             @endif
         </div>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center lg:col-span-2 xl:col-span-1">
             <div class="max-w-2xl">
                 <div
                     class="mb-4 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
@@ -41,13 +41,13 @@
 
                 <div
                     class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                    <h3 class="font-semibold text-xl dark:text-text-light">INCLUDE</h3>
+                    <h3 class="font-semibold text-lg md:text-xl dark:text-text-light">INCLUDE</h3>
                     <p class="dark:text-text-gray font-semibold">{{ $trip->include }}</p>
                 </div>
 
                 <div
                     class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                    <h3 class="font-semibold text-xl dark:text-text-light">EXCLUDE</h3>
+                    <h3 class="font-semibold text-lg md:text-xl dark:text-text-light">EXCLUDE</h3>
                     <p class="dark:text-text-gray font-semibold">{{ $trip->exclude }}</p>
                 </div>
             </div>
@@ -55,13 +55,14 @@
     </div>
     <div class="mx-10">
         <div class="flex justify-evenly px-3 py-2 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-            <p class="font-semibold text-xl dark:text-text-light">DETAILS</p>
+            <p class="font-semibold text-lg md:text-xl dark:text-text-light">DETAILS</p>
             <div class="inline-block w-0.5 self-stretch bg-black opacity-100 dark:opacity-50"></div>
-            <p class="font-semibold text-xl dark:text-text-light">{{ $trip->slug }}</p>
+            <p class="font-semibold text-lg md:text-xl dark:text-text-light">{{ $trip->slug }}</p>
             <div class="inline-block w-0.5 self-stretch bg-black opacity-100 dark:opacity-50"></div>
-            <p class="font-semibold text-xl dark:text-text-light">{{ $trip->airlines }}</p>
+            <p class="font-semibold text-lg md:text-xl dark:text-text-light">{{ $trip->airlines }}</p>
             <div class="inline-block w-0.5 self-stretch bg-black opacity-100 dark:opacity-50"></div>
-            <p class="font-semibold text-xl dark:text-text-light">$ {{ $trip->price }}</p>
+            <p class="font-semibold text-lg md:text-xl dark:text-text-light">$ {{ $trip->price }}</p>
         </div>
     </div>
+    
 @endsection

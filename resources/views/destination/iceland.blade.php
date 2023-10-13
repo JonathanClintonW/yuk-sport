@@ -33,7 +33,7 @@
                             <div>
                                 @if (!empty($trip->images))
                                     @foreach (json_decode($trip->images) as $image)
-                                        <img src="{{ asset('images/' . $image) }}" alt="{{ $trip->destination }}"
+                                        <img src="{{ asset('content-images/' . $image) }}" alt="{{ $trip->destination }}"
                                             class="w-64 h-80 object-cover rounded-xl mb-2">
                                     @endforeach
                                 @endif

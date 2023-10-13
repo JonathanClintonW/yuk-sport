@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 
 Auth::routes();
@@ -41,7 +42,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/destination/{slug}', [TripController::class, 'show'])->name('trip.show');
 
-    Route::get('/user/profile', [Controller::class, 'showProfile'])->name('user.profile');
+    Route::get('/user/profile', [UserController::class, 'showProfile'])->name('user.profile');
+
+    Route::patch('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update-profile');
+
+    Route::get('/download/{trip}', [TripController::class, 'download'])->name('download');
 });
 
 Route::middleware(['middleware' => 'adminauth'])->group(function () {
@@ -50,4 +55,8 @@ Route::middleware(['middleware' => 'adminauth'])->group(function () {
     Route::post('/admin/trips', [AdminController::class, 'store'])->name('admin.trips.store');
 
     Route::get('/manage-product', [AdminController::class, 'showManageProduct'])->name('admin.manage');
+
+    Route::get('/add-product', [AdminController::class, 'showAddProduct'])->name('admin.add');
+
+    Route::get('/list-product', [AdminController::class, 'showListProduct'])->name('admin.list');
 });

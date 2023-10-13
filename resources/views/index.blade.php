@@ -6,7 +6,7 @@
             class="absolute select-none inset-0 flex items-center justify-center font-bold text-text-light z-10 text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-all duration-200">
             ASTRO TRAVEL</h1>
         <div class="flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover -translate-y-[48px]"
-            style="background-image: url('{{ asset('images/mountain-main.jpg') }}'); background-size: cover;">
+            style="background-image: url('{{ asset('images/index-main.jpg') }}'); background-size: cover;">
         </div>
     </div>
 

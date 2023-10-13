@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Trip;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+
 
 class TripController extends Controller
 {
@@ -55,5 +57,25 @@ class TripController extends Controller
         }
 
         return view('destination.show', compact('trip'));
+    }
+
+    public function download(Trip $trip)
+    {
+        // Assuming $trip is an Eloquent model representing your trip
+
+        // Get the path to the PDF file stored in the database
+        $pdfPath = 'public/storage/pdfs/' . $trip->pdf_path;
+
+        // Check if the file exists
+        if (Storage::exists($pdfPath)) {
+            // Generate a dynamic file name if needed
+            $fileName = 'your_dynamic_filename.pdf';
+
+            // Return the file for download
+            return response()->download(storage_path($pdfPath), $fileName);
+        } else {
+            // Handle the case when the file does not exist
+            return abort(404);
+        }
     }
 }
