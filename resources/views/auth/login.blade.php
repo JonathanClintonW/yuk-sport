@@ -27,7 +27,7 @@
                         name="password" required autocomplete="current-password">
 
                 </div>
-
+                
                 <hr class="w-full h1 bg-black">
                 <div class="mx-1.5 mt-3 mb-20px">
                     <p class="font-medium dark:text-text-light">Don't have an account? <a href="{{ route('register') }}"

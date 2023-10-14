@@ -59,4 +59,10 @@ Route::middleware(['middleware' => 'adminauth'])->group(function () {
     Route::get('/add-product', [AdminController::class, 'showAddProduct'])->name('admin.add');
 
     Route::get('/list-product', [AdminController::class, 'showListProduct'])->name('admin.list');
+
+    Route::get('/admin/delete/{trip}', [AdminController::class, 'delete'])->name('admin.delete');
+
+    Route::get('/admin/edit/{trip}', [AdminController::class, 'edit'])->name('admin.edit');
+
+    Route::patch('/admin/update/{trip}', [AdminController::class, 'update'])->name('admin.update');
 });
