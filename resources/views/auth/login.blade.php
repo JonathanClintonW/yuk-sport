@@ -47,11 +47,11 @@
                     <button type="submit"
                         class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-violet-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-text-light px-4 py-1 rounded-md">
                         {{ __('Login') }}
-                    </button>
-                    
+                    </button>       
                 </div>
             </form>
         </div>
+        
     </div>
     <div class="custom-gradient-bg flex-1">
         

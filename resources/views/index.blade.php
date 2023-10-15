@@ -358,9 +358,11 @@
                 </div>
             </div>
         </div>
+       
     </div>
 
     <footer class="flex flex-col items-center  w-screen custom-gradient-bg pt-4 pb-4">
         <p class="text-text-gray text-xs sm:text-base">&copy; Astro Travel All rights reserved</p>
     </footer>
+   
 @endsection

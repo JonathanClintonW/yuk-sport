@@ -39,9 +39,7 @@ class LoginController extends Controller
             Auth::guard('admin')->login($admin);
             return redirect()->route('admin.index');
         } else {
-            return back()->withInput()->withErrors(['email' => 'Invalid email or password']);
+            return redirect()->route('login');
         }
     }
-
-    
 }
