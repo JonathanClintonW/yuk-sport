@@ -40,27 +40,27 @@
                 </div>
 
                 <div
-                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                    <h3 class="font-semibold text-lg md:text-xl dark:text-text-light">INCLUDE</h3>
-                    <p class="dark:text-text-gray font-semibold">{{ $trip->include }}</p>
+                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
+                    <h3 class="font-semibold text-lg md:text-xl">INCLUDE</h3>
+                    <p class="font-semibold">{{ $trip->include }}</p>
                 </div>
 
                 <div
-                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                    <h3 class="font-semibold text-lg md:text-xl dark:text-text-light">EXCLUDE</h3>
-                    <p class="dark:text-text-gray font-semibold">{{ $trip->exclude }}</p>
+                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
+                    <h3 class="font-semibold text-lg md:text-xl">EXCLUDE</h3>
+                    <p class="font-semibold">{{ $trip->exclude }}</p>
                 </div>
 
                 <div
-                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                    <h3 class="font-semibold text-lg md:text-xl dark:text-text-light">AIRLINES</h3>
-                    <p class="dark:text-text-gray font-semibold">{{ $trip->airlines }}</p>
+                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
+                    <h3 class="font-semibold text-lg md:text-xl">AIRLINES</h3>
+                    <p class="font-semibold">{{ $trip->airlines }}</p>
                 </div>
 
                 <div
-                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl dark:bg-dark-secondary-bg shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                    <h3 class="font-semibold text-lg md:text-xl dark:text-text-light">PRICE</h3>
-                    <p class="dark:text-text-gray font-semibold">$ {{ $trip->price }}</p>
+                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
+                    <h3 class="font-semibold text-lg md:text-xl">PRICE</h3>
+                    <p class="font-semibold">$ {{ $trip->price }}</p>
                 </div>
             </div>
         </div>

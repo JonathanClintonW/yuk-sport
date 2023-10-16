@@ -11,7 +11,7 @@
 
             <table class="w-full table-auto divide-y divide-gray-500">
                 <thead>
-                    <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-4">
+                    <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-4 dark:text-text-light">
                         <th>Airlines</th>
                         <th>Transit</th>
                         <th>Departure Date</th>
@@ -23,7 +23,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-500">
                     @foreach ($trips as $trip)
-                        <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-3 py-3">
+                        <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-3 py-3 dark:text-text-light">
                             <td>{{ $trip->airlines }}</td>
                             <td>{{ $trip->transit }}</td>
                             <td>{{ $trip->departure_date }}</td>
@@ -57,48 +57,48 @@
                                     @method('PATCH')
 
                                     <div class="mb-4 grid">
-                                        <label for="airlines">Airlines:</label>
-                                        <input type="text" id="airlines" name="airlines" class="px-1 py-2" value="{{ $trip->airlines }}"
+                                        <label for="airlines" class="dark:text-text-light">Airlines:</label>
+                                        <input type="text" id="airlines" name="airlines" class="px-1 py-2 rounded " value="{{ $trip->airlines }}"
                                             required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="transit">Transit:</label>
-                                        <input type="text" id="transit" name="transit" class="px-1 py-2" value="{{ $trip->transit }}"
+                                        <label for="transit" class="dark:text-text-light">Transit:</label>
+                                        <input type="text" id="transit" name="transit" class="px-1 py-2 rounded" value="{{ $trip->transit }}"
                                             required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="departure_date">Departure Date:</label>
-                                        <input type="datetime-local" id="departure_date" name="departure_date" class="px-1 py-2"
+                                        <label for="departure_date" class="dark:text-text-light">Departure Date:</label>
+                                        <input type="datetime-local" id="departure_date" name="departure_date" class="px-1 py-2 rounded"
                                             value="{{ date('Y-m-d\TH:i', strtotime($trip->departure_date)) }}" required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="return_date">Return Date:</label>
-                                        <input type="datetime-local" id="return_date" name="return_date" class="px-1 py-2"
+                                        <label for="return_date" class="dark:text-text-light">Return Date:</label>
+                                        <input type="datetime-local" id="return_date" name="return_date" class="px-1 py-2 rounded"
                                             value="{{ date('Y-m-d\TH:i', strtotime($trip->return_date)) }}" required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="price">Price:</label>
-                                        <input type="text" id="price" name="price" class="px-1 py-2" value="{{ $trip->price }}"
+                                        <label for="price" class="dark:text-text-light">Price:</label>
+                                        <input type="text" id="price" name="price" class="px-1 py-2 rounded" value="{{ $trip->price }}"
                                             required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="include">Include:</label>
-                                        <textarea id="include" name="include" class="px-1 py-2" required>{{ $trip->include }}</textarea>
+                                        <label for="include" class="dark:text-text-light">Include:</label>
+                                        <textarea id="include" name="include" class="px-1 py-2 rounded" required>{{ $trip->include }}</textarea>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="exclude">Exclude:</label>
-                                        <textarea id="exclude" name="exclude" class="px-1 py-2" required>{{ $trip->exclude }}</textarea>
+                                        <label for="exclude" class="dark:text-text-light">Exclude:</label>
+                                        <textarea id="exclude" name="exclude" class="px-1 py-2 rounded" required>{{ $trip->exclude }}</textarea>
                                     </div>
                                     
                                     <div class="mb-4 grid">
-                                        <label for="description">Description:</label>
-                                        <textarea id="description" name="description" class="px-1 py-2 h-20" required>{{ $trip->description }}</textarea>
+                                        <label for="description" class="dark:text-text-light">Description:</label>
+                                        <textarea id="description" name="description" class="px-1 py-2 h-20 rounded" required>{{ $trip->description }}</textarea>
                                     </div>
 
                                     <button type="submit"

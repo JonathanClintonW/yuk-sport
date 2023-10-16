@@ -61,3 +61,22 @@
     animation: slide-in 1s ease;
 }
 
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+}
+@keyframes counter {
+    from {
+        --num: 0;
+    }
+    to {
+        --num: 40;
+    }
+} 

@@ -9,42 +9,42 @@
                 @csrf
 
                 <label for="destination" class="font-semibold dark:text-text-gray">Destination:</label>
-                <input type="text" name="destination" id="destination" class="mb-3 border-black rounded focus:ring-0"
+                <input type="text" name="destination" id="destination" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"
                     required>
 
                 <label for="slug" class="font-semibold dark:text-text-gray">Custom Slug:</label>
-                <input type="text" name="slug" id="slug" class="mb-3 border-black rounded focus:ring-0" required>
+                <input type="text" name="slug" id="slug" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required>
 
                 <label for="airlines" class="font-semibold dark:text-text-gray">Airlines:</label>
-                <input type="text" name="airlines" id="airlines" class="mb-3 border-black rounded focus:ring-0"
+                <input type="text" name="airlines" id="airlines" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"
                     required>
 
                 <label for="transit" class="font-semibold dark:text-text-gray">Transit:</label>
-                <input type="text" name="transit" id="transit" class="mb-3 border-black rounded focus:ring-0" required>
+                <input type="text" name="transit" id="transit" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required>
 
                 <label for="departure_date" class="font-semibold dark:text-text-gray">Departure Date:</label>
                 <input type="datetime-local" name="departure_date" id="departure_date"
-                    class="mb-3 border-black rounded focus:ring-0" required>
+                    class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required>
 
                 <label for="return_date" class="font-semibold dark:text-text-gray">Return Date:</label>
                 <input type="datetime-local" name="return_date" id="return_date"
-                    class="mb-3 border-black rounded focus:ring-0" required>
+                    class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required>
 
                 <label for="price" class="font-semibold dark:text-text-gray">Price:</label>
                 <input type="number" name="price" id="price" step="0.01"
-                    class="mb-3 border-black rounded focus:ring-0" required>
+                    class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required>
 
                 <label for="include" class="font-semibold dark:text-text-gray">Include:</label>
-                <textarea name="include" id="include" class="mb-3 border-black rounded focus:ring-0"></textarea>
+                <textarea name="include" id="include" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"></textarea>
 
                 <label for="exclude" class="font-semibold dark:text-text-gray">Exclude:</label>
-                <textarea name="exclude" id="exclude" class="mb-3 border-black rounded focus:ring-0"></textarea>
+                <textarea name="exclude" id="exclude" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"></textarea>
 
                 <label for="description" class="font-semibold dark:text-text-gray">Description:</label>
-                <textarea name="description" id="description" class="mb-3 border-black rounded focus:ring-0" required></textarea>
+                <textarea name="description" id="description" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required></textarea>
 
                 <label for="total_pax" class="font-semibold dark:text-text-gray">Total Pax:</label>
-                <input type="number" name="total_pax" id="total_pax" class="mb-3 border-black rounded focus:ring-0"
+                <input type="number" name="total_pax" id="total_pax" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"
                     required min="1">
 
                 <label for="images" class="font-semibold dark:text-text-gray">Images:</label>
