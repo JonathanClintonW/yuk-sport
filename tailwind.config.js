@@ -56,11 +56,6 @@ export default {
       boxShadow: {
         'sm': '0.5px 2px 1px 0 ##9D4CCC'
       },
-
-      backgroundImage: {
-        'heroimage': 'url(https://unsplash.com/photos/I3jSS2YfmcU)'
-      },
-      
     },
   },
   plugins: [

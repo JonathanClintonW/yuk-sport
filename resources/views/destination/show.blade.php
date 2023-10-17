@@ -62,8 +62,39 @@
                     <h3 class="font-semibold text-lg md:text-xl">PRICE</h3>
                     <p class="font-semibold">$ {{ $trip->price }}</p>
                 </div>
+
+                <div
+                    class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
+                    <button id="orderButton" class="bg-blue-500 text-white p-2 rounded">Order Now</button>
+
+                    <!-- Hidden div for the order form -->
+                    <div id="orderForm" class="hidden mt-4">
+                        <h2>Place Your Order</h2>
+                        <form action="{{ route('order.create') }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            <input type="hidden" name="trip_id" value="{{ $trip->id }}">
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+
+                            <label for="government_id">Upload Government ID:</label>
+                            <input type="file" name="government_id" accept=".jpg, .jpeg, .png" required>
+
+                            <label for="passport_id">Upload Passport ID:</label>
+                            <input type="file" name="passport_id" accept=".jpg, .jpeg, .png" required>
+
+                            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Submit Order</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
+        <script>
+            const orderButton = document.getElementById('orderButton');
+            const orderForm = document.getElementById('orderForm');
+            
+            orderButton.addEventListener('click', () => {
+                orderForm.classList.toggle('hidden');
+            });
+        </script>
     </div>
-    
+
 @endsection

@@ -7,6 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 
 Auth::routes();
@@ -47,6 +48,8 @@ Route::middleware(['auth'])->group(function () {
     Route::patch('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update-profile');
 
     Route::get('/download/{trip}', [TripController::class, 'download'])->name('download');
+
+    Route::post('/order/create', [OrderController::class, 'create'])->name('order.create');
 });
 
 Route::middleware(['middleware' => 'adminauth'])->group(function () {
