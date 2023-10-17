@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('passport_id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('trip_id');
-            $table->unsignedBigInteger('payment_id');
+            $table->unsignedBigInteger('payment_id')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');

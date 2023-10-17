@@ -3,35 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
 use App\Models\Order;
-use Illuminate\Support\Facades\Storage;
 
 class OrderController extends Controller
 {
     public function create(Request $request)
     {
-        // Validate the incoming request data (e.g., user ID, trip ID, uploaded files)
         $request->validate([
-            'user_id' => 'required|integer',
-            'trip_id' => 'required|integer',
-            'government_id' => 'required|file|mimes:jpeg,png|max:2048', // Example validation, adjust as needed
-            'passport_id' => 'required|file|mimes:jpeg,png|max:2048', // Example validation, adjust as needed
+            'government_id' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'passport_id' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'trip_id' => 'required|exists:trips,id',
         ]);
 
-        // Handle file uploads and store them in a suitable location (e.g., in the storage folder)
-        $governmentIdPath = $request->file('government_id')->store('order_documents');
-        $passportIdPath = $request->file('passport_id')->store('order_documents');
+        $user = auth()->user(); // Get the currently authenticated user
 
-        // Create a new order record in the database
-        Order::create([
-            'user_id' => $request->user_id,
-            'trip_id' => $request->trip_id,
-            'government_id' => $governmentIdPath,
-            'passport_id' => $passportIdPath,
-            'payment_id' => null, // You can handle this as needed
-        ]);
+        $order = new Order();
 
-        // Redirect or return a response to indicate successful order creation
-        return redirect()->route('trip.show', $request->trip_id)->with('success', 'Order placed successfully.');
+        // Store files in the public/content-data directory
+        $order->government_id = $request->file('government_id')->store('public/content-data');
+        $order->passport_id = $request->file('passport_id')->store('public/content-data');
+
+        $order->trip_id = $request->input('trip_id');
+        $order->user_id = $user->id; // You can adjust this based on your user structure
+        $order->save();
+
+        // Optionally, you can redirect the user to a thank-you page or any other relevant page.
+        return redirect()->route('index');
     }
 }
