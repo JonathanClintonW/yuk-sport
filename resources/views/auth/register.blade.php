@@ -4,7 +4,8 @@
     <div class="flex flex-col justify-center items-center w-screen sm:min-w-[480px] max-w-screen-lg dark:bg-dark-primary-bg">
         <div class="justify-start w-96">
             <a href="{{ route('index') }}">
-                <h1 class="mx-1.5 mb-1 font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-secondary-color from-5% to-primary-color dark:from-primary-color dark:from-10% dark:to-secondary-color">
+                <h1
+                    class="mx-1.5 mb-1 font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-secondary-color from-5% to-primary-color dark:from-primary-color dark:from-10% dark:to-secondary-color">
                     ASTRO TRAVEL
                 </h1>
             </a>
@@ -71,6 +72,7 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
+                   
 
                 </div>
 
@@ -90,7 +92,8 @@
                 </div>
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
-                    <label for="password-confirm" class="font-medium dark:text-text-light">{{ __('Confirm Password') }}</label>
+                    <label for="password-confirm"
+                        class="font-medium dark:text-text-light">{{ __('Confirm Password') }}</label>
 
                     <input id="password-confirm" type="password"
                         class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg"
@@ -115,6 +118,7 @@
 
                 </div>
             </form>
+
 
         </div>
     </div>

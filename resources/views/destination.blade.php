@@ -36,7 +36,7 @@
             </a>
         </div>
     </div>
-    <div class="sm:mt-5 flex flex-col items-center select-none pb-4">
+    <div class="sm:mt-5 flex flex-col items-center select-none pb-4 dark:bg-dark-primary-bg">
         <h1
             class="mb-7 sm:w-full text-center text-xl font-bold sm:text-2xl transition-all duration-200 text-black-color dark:text-text-light antialiased">
             Find Your Dream Destination</h1>

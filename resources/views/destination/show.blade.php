@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="h-screen">
+    <div class="min-h-screen ">
         <section class="grid grid-cols-1 xl:grid-cols-3 items center justify-items-center mt-20 mx-10 select-none">
-            <article class="max-w-3xl mb-4 lg:col-span-2 xl:col-span-1">
+            <article class="max-w-3xl mb-4 lg:col-span-2 xl:col-span-1 ">
                 <h1
                     class="font-bold mb-4 text-5xl md:text-6xl lg:text-7xl xl:text-9xl transition-all duration-200 custom-gradient-text uppercase">
                     {{ $trip->destination }}</h1>
@@ -11,7 +11,7 @@
                     {{ $trip->description }}</p>
             </article>
 
-            <div class="mb-5">
+            <div class="mb-5 ">
                 @if (!empty($trip->images))
                     @foreach (json_decode($trip->images) as $image)
                         <div
@@ -22,7 +22,7 @@
                     @endforeach
                 @endif
             </div>
-            <div class="flex flex-col items-center lg:col-span-2 xl:col-span-1">
+            <div class="flex flex-col items-center lg:col-span-2 xl:col-span-1 ">
                 <div class="max-w-2xl">
                     <div
                         class="mb-4 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
@@ -42,13 +42,13 @@
 
                     <div
                         class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                        <h3 class="font-semibold text-lg md:text-xl">INCLUDE</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mr-4">INCLUDE</h3>
                         <p class="font-semibold">{{ $trip->include }}</p>
                     </div>
 
                     <div
                         class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                        <h3 class="font-semibold text-lg md:text-xl">EXCLUDE</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mr-4">EXCLUDE</h3>
                         <p class="font-semibold">{{ $trip->exclude }}</p>
                     </div>
 
@@ -74,7 +74,7 @@
             </div>
 
         </section>
-        <section class="flex flex-col items-center w-screen">
+        <section id="orderSection" class="pb-5 flex flex-col items-center w-screen dark:bg-dark-primary-bg">
             <div id="orderForm"
                 class="hidden mb-5 px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
                 <h2 class="text-center font-semibold text-lg md:text-xl mb-3">Place Your Order</h2>
@@ -109,9 +109,11 @@
         <script>
             const orderButton = document.getElementById('orderButton');
             const orderForm = document.getElementById('orderForm');
+            const orderSection = document.getElementById('orderSection');
 
             orderButton.addEventListener('click', () => {
                 orderForm.classList.toggle('hidden');
+                orderSection.scrollIntoView({behavior:'smooth'});
             });
         </script>
     </div>

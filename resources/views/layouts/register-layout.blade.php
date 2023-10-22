@@ -16,7 +16,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'public/js/app.js'])
+    @vite(['resources/sass/app.scss'])
     @vite('public/css/app.css')
 
     <script>

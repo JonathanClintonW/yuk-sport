@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/destination/{slug}', [TripController::class, 'show'])->name('trip.show');
 
     Route::get('/user/profile', [UserController::class, 'showProfile'])->name('user.profile');
-
+    
     Route::patch('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update-profile');
 
     Route::get('/download/{trip}', [TripController::class, 'download'])->name('download');
