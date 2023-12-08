@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Astro Travel') }}</title>
+    <title>{{ config('app.name', 'YukSport') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +35,7 @@
             class="bg-white relative translate-y-[14px] px-3.5 mx-6 rounded-2xl flex h-12 items-center justify-between z-10">
 
             <a class="font-bold" href="{{ url('/') }}">
-                ASTRO TRAVEL
+                YukSport
             </a>
 
             <div class="lg:hidden flex">
@@ -51,18 +51,18 @@
 
             <ul class="hidden absolut font-bold  lg:flex lg:items-center lg:w-auto lg:space-x-6 gap-4">
                 <li
-                    class="{{ Route::currentRouteName() === 'destination' ? 'pl-4 custom-gradient-bg px-2 py-0.5 text-text-light rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
-                    <a href="{{ route('destination') }}"><span class="link-underline">{{ __('DESTINATION') }}</span></a>
+                    class="{{ Route::currentRouteName() === 'lapangan' ? 'pl-4 custom-gradient-bg px-2 py-0.5 rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
+                    <a href="{{ route('lapangan') }}"><span class="link-underline">{{ __('LAPANGAN') }}</span></a>
                 </li>
 
                 <li
-                    class="{{ Route::currentRouteName() === 'about' ? 'pl-4 custom-gradient-bg px-2 py-0.5 text-text-light rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
+                    class="{{ Route::currentRouteName() === 'about' ? 'pl-4 custom-gradient-bg px-2 py-0.5 rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
                     <a href="{{ route('about') }}"><span class="link-underline">{{ __('ABOUT') }}</span></a>
                 </li>
 
                 @auth('web')
                     <li
-                        class="{{ Route::currentRouteName() === 'user.profile' ? 'pl-4 custom-gradient-bg px-2 py-0.5 text-text-light rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
+                        class="{{ Route::currentRouteName() === 'user.profile' ? 'pl-4 custom-gradient-bg px-2 py-0.5 rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
                         <a href="{{ route('user.profile') }}">
                             <span class="link-underline">{{ __('PROFILE') }}</span>
                         </a>
@@ -102,14 +102,14 @@
                     class="text-gray-500 dark:text-gray-400  focus:outline-none focus:ring-0  rounded-lg text-sm p-2.5 m-0">
 
                     <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" fill="#000000"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#330066"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#010300"
                         class="hidden w-6 h-6 transition-all duration-200">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
                     </svg>
 
                     <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" fill="#000000"
-                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#330066"
+                        viewBox="0 0 24 24" stroke-width="1.5" stroke="#010300"
                         class="hidden w-6 h-6 transition-all duration-200">
                         <path stroke-linecap="round" stroke-linejoin="round"
                             d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
@@ -144,7 +144,7 @@
                         </li>
                         <li class="mb-1">
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
-                                href="{{ route('destination') }}">DESTINATION</a>
+                                href="{{ route('lapangan') }}">LAPANGAN</a>
                         </li>
                         <li class="mb-1">
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"

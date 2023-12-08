@@ -5,21 +5,21 @@
         <div class="justify-start w-96">
             <a href="{{ route('index') }}">
                 <h1
-                    class="mx-1.5 mb-1 font-bold text-xl text-transparent bg-clip-text bg-gradient-to-r from-secondary-color from-5% to-primary-color dark:from-primary-color dark:from-10% dark:to-secondary-color">
+                    class="mx-1.5 mb-1 font-bold text-xl bg-clip-text bg-gradient-to-r text-text-dark-green dark:text-primary-color">
                     ASTRO TRAVEL
                 </h1>
             </a>
-            <p class="mx-1.5 mb-4 font-medium text-base dark:text-text-light">Join Us and See the World!</p>
+            <p class="mx-1.5 mb-4 font-medium text-base dark:text-text-light">Daftar sebagai Pengguna untuk menyewa lapangan</p>
         </div>
 
         <div class="w-96 grid-cols-1">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
-                    <label for="name" class="font-medium dark:text-text-light">{{ __('Name') }}</label>
+                    <label for="name" class="font-medium dark:text-text-light">{{ __('Nama') }}</label>
 
                     <input id="name" type="text"
-                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('name') is-invalid @enderror "
+                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('name') is-invalid @enderror "
                         name="name" value="{{ old('name') }}" required autocomplete="off">
 
                     @error('name')
@@ -31,10 +31,10 @@
                 </div>
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
-                    <label for="address" class="font-medium dark:text-text-light">{{ __('Address') }}</label>
+                    <label for="address" class="font-medium dark:text-text-light">{{ __('Alamat') }}</label>
 
                     <input id="address" type="text"
-                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('address') is-invalid @enderror"
+                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('address') is-invalid @enderror"
                         name="address" value="{{ old('address') }}" required autocomplete="address">
 
                     @error('address')
@@ -46,10 +46,10 @@
                 </div>
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
-                    <label for="phone" class="font-medium dark:text-text-light">{{ __('Phone') }}</label>
+                    <label for="phone" class="font-medium dark:text-text-light">{{ __('Telepon') }}</label>
 
                     <input id="phone" type="text"
-                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('phone') is-invalid @enderror"
+                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('phone') is-invalid @enderror"
                         name="phone" value="{{ old('phone') }}" required autocomplete="phone">
 
                     @error('phone')
@@ -61,10 +61,10 @@
                 </div>
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
-                    <label for="email" class="font-medium dark:text-text-light">{{ __('Email Address') }}</label>
+                    <label for="email" class="font-medium dark:text-text-light">{{ __('Alamat Email') }}</label>
 
                     <input id="email" type="email"
-                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('email') is-invalid @enderror"
+                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('email') is-invalid @enderror"
                         name="email" value="{{ old('email') }}" required autocomplete="email">
 
                     @error('email')
@@ -72,7 +72,7 @@
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
-                   
+
 
                 </div>
 
@@ -80,7 +80,7 @@
                     <label for="password" class="font-medium dark:text-text-light">{{ __('Password') }}</label>
 
                     <input id="password" type="password"
-                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('password') is-invalid @enderror"
+                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('password') is-invalid @enderror"
                         name="password" required autocomplete="new-password">
 
                     @error('password')
@@ -93,26 +93,26 @@
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
                     <label for="password-confirm"
-                        class="font-medium dark:text-text-light">{{ __('Confirm Password') }}</label>
+                        class="font-medium dark:text-text-light">{{ __('Konfirmasi Password') }}</label>
 
                     <input id="password-confirm" type="password"
-                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg"
+                        class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg"
                         name="password_confirmation" required autocomplete="new-password">
 
                 </div>
                 <hr class="w-full h1 bg-black">
                 <div class="mx-1.5 mt-3 mb-20px">
-                    <p class="font-medium dark:text-text-light">Already have an account? <a href="{{ route('login') }}"
-                            class="text-primary-color font-medium">Login</a></p>
+                    <p class="font-medium dark:text-text-light">Sudah memiliki akun? <a href="{{ route('login') }}"
+                            class="text-text-dark-green dark:text-primary-color font-medium">Login</a></p>
                 </div>
 
                 <div class="flex justify-between items-center mx-1.5 mb-20px">
-                    <a href="{{ route('admin.register') }}" class="text-primary-color font-medium">
-                        {{ __('Register as Admin') }}
+                    <a href="{{ route('admin.register') }}" class="text-text-dark-green dark:text-primary-color font-medium">
+                        {{ __('Daftar sebagai Admin') }}
                     </a>
 
                     <button type="submit"
-                        class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-violet-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-text-light px-4 py-1 rounded-md  ">
+                        class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-green-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-secondary-color px-4 py-1 rounded-md  ">
                         {{ __('Register') }}
                     </button>
 
@@ -124,6 +124,6 @@
     </div>
 
     <div class="custom-gradient-bg flex-1">
-
+        
     </div>
 @endsection

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Astro Travel') }}</title>
+    <title>{{ config('app.name', 'YukSport') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth dark:bg-dark-primary-color">
+<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth dark:bg-dark-secondary-bg">
     <div id="app">
         <div>
             <button data-drawer-target="default-sidebar" data-drawer-toggle="default-sidebar"

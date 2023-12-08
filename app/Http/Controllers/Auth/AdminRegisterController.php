@@ -15,7 +15,7 @@ class AdminRegisterController extends Controller
 {
     use RegistersUsers;
 
-    protected $redirectTo = 'admin.index';
+    protected $redirectTo = 'admin-index';
 
     public function __construct()
     {

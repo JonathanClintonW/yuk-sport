@@ -8,6 +8,7 @@ use App\Http\Controllers\TripController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 
 Auth::routes();
@@ -16,7 +17,7 @@ Route::get('/index', [Controller::class, 'showIndex'])->name('index');
 
 Route::get('/', [Controller::class, 'showIndex'])->name('index');
 
-Route::get('/destination', [Controller::class, 'showDestination'])->name('destination');
+Route::get('/lapangan', [Controller::class, 'showLapangan'])->name('lapangan');
 
 Route::get('/about', [Controller::class, 'showAbout'])->name('about');
 
@@ -29,20 +30,22 @@ Route::get('/admin/register', [Controller::class, 'showAdminRegistration'])->nam
 Route::post('/admin/register', [AdminRegisterController::class, 'register'])->name('admin.register');
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/destination/japan', [TripController::class, 'showJapan'])->name('destination.japan');
 
-    Route::get('/destination/switzerland', [TripController::class, 'showSwitzerland'])->name('destination.switzerland');
+    Route::get('/category/badminton', [CategoryController::class, 'showBadminton'])->name('category.badminton');
 
-    Route::get('/destination/france', [TripController::class, 'showFrance'])->name('destination.france');
+    Route::get('/category/basket', [CategoryController::class, 'showBasket'])->name('category.basket');
 
-    Route::get('/destination/iceland', [TripController::class, 'showIceland'])->name('destination.iceland');
+    Route::get('/category/futsal', [CategoryController::class, 'showFutsal'])->name('category.futsal');
 
-    Route::get('/destination/indonesia', [TripController::class, 'showIndonesia'])->name('destination.indonesia');
+    Route::get('/category/golf', [CategoryController::class, 'showGolf'])->name('category.golf');
 
-    Route::get('/destination/greece', [TripController::class, 'showGreece'])->name('destination.greece');
+    Route::get('/category/tennis', [CategoryController::class, 'showTennis'])->name('category.tennis');
 
-    Route::get('/destination/{slug}', [TripController::class, 'show'])->name('trip.show');
+    Route::get('/category/volley', [CategoryController::class, 'showVolley'])->name('category.volley');
 
+    Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
+
+    
     Route::get('/user/profile', [UserController::class, 'showProfile'])->name('user.profile');
     
     Route::patch('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update-profile');
@@ -55,7 +58,7 @@ Route::middleware(['auth'])->group(function () {
 Route::middleware(['middleware' => 'adminauth'])->group(function () {
     Route::get('/admin-index', [AdminController::class, 'showAdminIndex'])->name('admin.index');
 
-    Route::post('/admin/trips', [AdminController::class, 'store'])->name('admin.trips.store');
+    Route::post('/admin/lapangan', [AdminController::class, 'store'])->name('admin.lapangan.store');
 
     Route::get('/manage-product', [AdminController::class, 'showManageProduct'])->name('admin.manage');
 

@@ -35,21 +35,22 @@ export default {
 
       colors: {
         // Light Color
-        'primary-color': '#9D4CCC',
-        'secondary-color': '#330066',
+        'primary-color': '#97FB57',
+        'secondary-color': '#121212',
 
         // Dark Color
-        'dark-primary-color': '#1d152d',
+        'dark-primary-color': '#3f741e',
         'dark-secondary-color': '#5e0034',
-
+        
         // Dark Background
-        'dark-primary-bg': '#040005',
-        'dark-secondary-bg': '#110015',
+        'dark-primary-bg': '#97FB57',
+        'dark-secondary-bg': '#121212',
 
         // Text Color
         'text-light': '#FFFFFF',
         'text-gray': '#C1C2C7',
         'text-dark-gray': '#393A3F',
+        'text-dark-green': '#3c9703',
         'black-color': '#000000',
       },
 

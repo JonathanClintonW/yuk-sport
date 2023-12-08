@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Astro Travel') }}</title>
+    <title>{{ config('app.name', 'YukSport') }}</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,8 +51,8 @@
 
             <ul class="hidden absolut font-bold  lg:flex lg:items-center lg:w-auto lg:space-x-6 gap-4">
                 <li
-                    class="{{ Route::currentRouteName() === 'destination' ? 'pl-4 custom-gradient-bg px-2 py-0.5 text-text-light rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
-                    <a href="{{ route('destination') }}"><span class="link-underline">{{ __('DESTINATION') }}</span></a>
+                    class="{{ Route::currentRouteName() === 'lapangan' ? 'pl-4 custom-gradient-bg px-2 py-0.5 text-text-light rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
+                    <a href="{{ route('lapangan') }}"><span class="link-underline">{{ __('LAPANGAN') }}</span></a>
                 </li>
 
                 <li
@@ -144,7 +144,7 @@
                         </li>
                         <li class="mb-1">
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
-                                href="{{ route('destination') }}">DESTINATION</a>
+                                href="{{ route('lapangan') }}">LAPANGAN</a>
                         </li>
                         <li class="mb-1">
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"

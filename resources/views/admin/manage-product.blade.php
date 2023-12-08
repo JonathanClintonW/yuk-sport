@@ -6,32 +6,30 @@
 
             <div
                 class="px-2 pt-1 mb-4 h-12 flex place-items-center items-center justify-center bg-dark-primary-color dark:bg-text-light rounded-xl">
-                <h1 class=" text-lg font-bold text-text-light dark:text-dark-primary-color">MANAGE TRIPS</h1>
+                <h1 class=" text-lg font-bold text-text-light dark:text-dark-primary-color">MANAGE LAPANGAN</h1>
             </div>
 
             <table class="w-full table-auto divide-y divide-gray-500">
                 <thead>
                     <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-4 dark:text-text-light">
-                        <th>Airlines</th>
-                        <th>Transit</th>
-                        <th>Departure Date</th>
-                        <th>Return Date</th>
-                        <th>Price</th>
+                        <th>Nama Lapangan</th>
+                        <th>Alamat</th>
+                        <th>Kategori</th>
+                        <th>Harga</th>
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody class="divide-y divide-gray-500">
-                    @foreach ($trips as $trip)
+                    @foreach ($lapangans as $lapangan)
                         <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-3 py-3 dark:text-text-light">
-                            <td>{{ $trip->airlines }}</td>
-                            <td>{{ $trip->transit }}</td>
-                            <td>{{ $trip->departure_date }}</td>
-                            <td>{{ $trip->return_date }}</td>
-                            <td>{{ $trip->price }}</td>
+                            <td>{{ $lapangan->nama_lapangan }}</td>
+                            <td>{{ $lapangan->alamat }}</td>
+                            <td>{{ $lapangan->kategori }}</td>
+                            <td>{{ $lapangan->harga }}</td>
 
                             <td class="flex justify-center">
-                                <a href="javascript:void(0)" onclick="toggleEditForm({{ $trip->id }})"><svg
+                                <a href="javascript:void(0)" onclick="toggleEditForm({{ $lapangan->id }})"><svg
                                         xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -40,7 +38,7 @@
                                 </a>
                             </td>
                             <td class="flex justify-center">
-                                <a href="{{ route('admin.delete', $trip->id) }}" class="text-red-600">
+                                <a href="{{ route('admin.delete', $lapangan->id) }}" class="text-red-600">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                         stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -50,55 +48,39 @@
                             </td>
                         </tr>
 
-                        <tr id="edit-form-{{ $trip->id }}" style="display: none">
+                        <tr id="edit-form-{{ $lapangan->id }}" style="display: none">
                             <td colspan="6">
-                                <form action="{{ route('admin.update', $trip->id) }}" method="post">
+                                <form action="{{ route('admin.update', $lapangan->id) }}" method="post">
                                     @csrf
                                     @method('PATCH')
 
                                     <div class="mb-4 grid">
-                                        <label for="airlines" class="dark:text-text-light">Airlines:</label>
-                                        <input type="text" id="airlines" name="airlines" class="px-1 py-2 rounded " value="{{ $trip->airlines }}"
+                                        <label for="nama_lapangan" class="dark:text-text-light">Nama Lapangan:</label>
+                                        <input type="text" id="nama_lapangan" name="nama_lapangan" class="px-1 py-2 rounded " value="{{ $lapangan->nama_lapangan }}"
                                             required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="transit" class="dark:text-text-light">Transit:</label>
-                                        <input type="text" id="transit" name="transit" class="px-1 py-2 rounded" value="{{ $trip->transit }}"
+                                        <label for="alamat" class="dark:text-text-light">Alamat:</label>
+                                        <input type="text" id="alamat" name="alamat" class="px-1 py-2 rounded" value="{{ $lapangan->alamat }}"
                                             required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="departure_date" class="dark:text-text-light">Departure Date:</label>
-                                        <input type="datetime-local" id="departure_date" name="departure_date" class="px-1 py-2 rounded"
-                                            value="{{ date('Y-m-d\TH:i', strtotime($trip->departure_date)) }}" required>
-                                    </div>
-
-                                    <div class="mb-4 grid">
-                                        <label for="return_date" class="dark:text-text-light">Return Date:</label>
-                                        <input type="datetime-local" id="return_date" name="return_date" class="px-1 py-2 rounded"
-                                            value="{{ date('Y-m-d\TH:i', strtotime($trip->return_date)) }}" required>
-                                    </div>
-
-                                    <div class="mb-4 grid">
-                                        <label for="price" class="dark:text-text-light">Price:</label>
-                                        <input type="text" id="price" name="price" class="px-1 py-2 rounded" value="{{ $trip->price }}"
+                                        <label for="kategori" class="dark:text-text-light">Kategori:</label>
+                                        <input type="text" id="kategori" name="kategori" class="px-1 py-2 rounded" value="{{ $lapangan->kategori }}"
                                             required>
                                     </div>
 
                                     <div class="mb-4 grid">
-                                        <label for="include" class="dark:text-text-light">Include:</label>
-                                        <textarea id="include" name="include" class="px-1 py-2 rounded" required>{{ $trip->include }}</textarea>
-                                    </div>
-
-                                    <div class="mb-4 grid">
-                                        <label for="exclude" class="dark:text-text-light">Exclude:</label>
-                                        <textarea id="exclude" name="exclude" class="px-1 py-2 rounded" required>{{ $trip->exclude }}</textarea>
+                                        <label for="harga" class="dark:text-text-light">Harga per Jam:</label>
+                                        <input type="text" id="harga" name="harga" class="px-1 py-2 rounded" value="{{ $lapangan->harga }}"
+                                            required>
                                     </div>
                                     
                                     <div class="mb-4 grid">
-                                        <label for="description" class="dark:text-text-light">Description:</label>
-                                        <textarea id="description" name="description" class="px-1 py-2 h-20 rounded" required>{{ $trip->description }}</textarea>
+                                        <label for="deskripsi" class="dark:text-text-light">Deskripsi:</label>
+                                        <textarea id="deskripsi" name="deskripsi" class="px-1 py-2 h-20 rounded" required>{{ $lapangan->deskripsi }}</textarea>
                                     </div>
 
                                     <button type="submit"
@@ -113,8 +95,8 @@
     </div>
 
     <script>
-        function toggleEditForm(tripId) {
-            const editForm = document.getElementById(`edit-form-${tripId}`);
+        function toggleEditForm(lapanganId) {
+            const editForm = document.getElementById(`edit-form-${lapanganId}`);
             if (editForm.style.display === 'none') {
                 // Show the edit form
                 editForm.style.display = 'table-row';

@@ -14,7 +14,8 @@ class UserController extends Controller
     public function showProfile()
     {
         $user = User::find(auth()->user()->id);
-        return view('user.profile', compact('user'));
+        $orders = $user->Orders;
+        return view('user.profile', compact('user', 'orders'));
     }
 
     public function updateProfile(Request $request)

@@ -29,7 +29,7 @@
                     class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-center align-center justify-items-center gap-5">
                     @foreach ($franceTrips as $trip)
                         <div
-                            class="mb-8 p-3 dark:bg-dark-secondary-bg rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
+                            class="mb-8 p-3 bg-white rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] dark:shadow-stone-800">
                             <div>
                                 @if (!empty($trip->images))
                                     @foreach (json_decode($trip->images) as $image)
@@ -39,16 +39,15 @@
                                 @endif
                             </div>
                             <div class="mb-2">
-                                <a href="{{ route('trip.show', ['slug' => $trip->slug]) }}"
-                                    class="dark:text-text-light font-bold text-lg">
+                                <a href="{{ route('trip.show', ['slug' => $trip->slug]) }}" class="font-bold text-lg">
                                     {{ $trip->slug }}
                                 </a>
                             </div>
-                            <hr class="mx-auto my-2 w-10/12 dark:border-white">
-                            <div class="mb-2 font-medium dark:text-text-light text-base">
+                            <hr class="mx-auto my-2 w-10/12">
+                            <div class="mb-2 font-medium text-base">
                                 {{ $trip->destination }}
                             </div>
-                            <div class="mb-3 font-medium dark:text-text-light text-base">
+                            <div class="mb-3 font-medium text-base">
                                 {{ \Carbon\Carbon::parse($trip->departure_date)->format('Y-m-d') }} to
                                 {{ \Carbon\Carbon::parse($trip->return_date)->format('Y-m-d') }}
                             </div>

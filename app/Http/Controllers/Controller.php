@@ -23,9 +23,9 @@ class Controller extends BaseController
         return view('auth.admin-register');
     }
 
-    public function showDestination()
+    public function showLapangan()
     {
-        return view('destination');
+        return view('lapangan');
     }
 
     public function showAbout()

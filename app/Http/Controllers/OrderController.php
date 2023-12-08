@@ -11,24 +11,30 @@ class OrderController extends Controller
     public function create(Request $request)
     {
         $request->validate([
-            'government_id' => 'required|image|mimes:jpeg,png,jpg|max:2048',
-            'passport_id' => 'required|image|mimes:jpeg,png,jpg|max:2048',
             'trip_id' => 'required|exists:trips,id',
+            'user_id' => 'required|exists:users,id',
+            'pax_amount' => 'required|integer|min:1',
+            'names.*' => 'required', // Validate names as an array
+            'birthdates.*' => 'required', // Validate birthdates as an array
         ]);
 
-        $user = auth()->user(); // Get the currently authenticated user
+        $tripId = $request->input('trip_id');
+        $userId = $request->input('user_id');
+        $paxAmount = $request->input('pax_amount');
+        $names = $request->input('names');
+        $birthdates = $request->input('birthdates');
 
+        // You can validate passenger names and birthdates here if needed
+
+        // Create the order with passenger names and birthdates
         $order = new Order();
-
-        // Store files in the public/content-data directory
-        $order->government_id = $request->file('government_id')->store('public/content-data');
-        $order->passport_id = $request->file('passport_id')->store('public/content-data');
-
-        $order->trip_id = $request->input('trip_id');
-        $order->user_id = $user->id; // You can adjust this based on your user structure
+        $order->trip_id = $tripId;
+        $order->user_id = $userId;
+        $order->pax_amount = $paxAmount;
+        $order->names = json_encode($names); // Store as JSON
+        $order->birthdates = json_encode($birthdates); // Store as JSON
         $order->save();
 
-        // Optionally, you can redirect the user to a thank-you page or any other relevant page.
-        return redirect()->route('index');
+        return view('thankyou');
     }
 }

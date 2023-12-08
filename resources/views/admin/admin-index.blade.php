@@ -4,7 +4,7 @@
     <div class="p-4 sm:ml-64">
         <div class="p-4 border-2 border-dashed rounded-lg border-dark-primary-color dark:border-text-light">
             <div class="grid grid-cols-3 gap-4 mb-4">
-                <div class="flex items-center justify-center h-24 rounded  bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center h-24 rounded  bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -13,7 +13,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center h-24 rounded bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center h-24 rounded bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -22,7 +22,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center h-24 rounded bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center h-24 rounded bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -32,7 +32,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex items-center justify-center h-48 mb-4 rounded bg-dark-primary-color dark:bg-dark-secondary-bg">
+            <div class="flex items-center justify-center h-48 mb-4 rounded bg-dark-primary-color dark:bg-dark-primary-bg">
                 <p class="text-2xl text-gray-500">
                     <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 18 18">
@@ -42,7 +42,7 @@
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-4 mb-4">
-                <div class="flex items-center justify-center rounded bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -51,7 +51,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -60,7 +60,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -69,7 +69,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center rounded  h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded  h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -79,7 +79,7 @@
                     </p>
                 </div>
             </div>
-            <div class="flex items-center justify-center h-48 mb-4 rounded  bg-dark-primary-color dark:bg-dark-secondary-bg">
+            <div class="flex items-center justify-center h-48 mb-4 rounded  bg-dark-primary-color dark:bg-dark-primary-bg">
                 <p class="text-2xl text-gray-500">
                     <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 18 18">
@@ -89,7 +89,7 @@
                 </p>
             </div>
             <div class="grid grid-cols-2 gap-4">
-                <div class="flex items-center justify-center rounded  h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded  h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -98,7 +98,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center rounded  h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded  h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -107,7 +107,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
@@ -116,7 +116,7 @@
                         </svg>
                     </p>
                 </div>
-                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-secondary-bg">
+                <div class="flex items-center justify-center rounded h-28 bg-dark-primary-color dark:bg-dark-primary-bg">
                     <p class="text-2xl text-gray-500">
                         <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                             viewBox="0 0 18 18">
