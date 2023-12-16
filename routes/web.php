@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TripController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
@@ -55,7 +54,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/order/create', [OrderController::class, 'create'])->name('order.create');
 });
 
-Route::middleware(['middleware' => 'adminauth'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('/admin-index', [AdminController::class, 'showAdminIndex'])->name('admin.index');
 
     Route::post('/admin/lapangan', [AdminController::class, 'store'])->name('admin.lapangan.store');
@@ -66,9 +65,9 @@ Route::middleware(['middleware' => 'adminauth'])->group(function () {
 
     Route::get('/list-product', [AdminController::class, 'showListProduct'])->name('admin.list');
 
-    Route::get('/admin/delete/{trip}', [AdminController::class, 'delete'])->name('admin.delete');
+    Route::get('/admin/delete/{lapangan}', [AdminController::class, 'delete'])->name('admin.delete');
 
-    Route::get('/admin/edit/{trip}', [AdminController::class, 'edit'])->name('admin.edit');
+    Route::get('/admin/edit/{lapangan}', [AdminController::class, 'edit'])->name('admin.edit');
 
-    Route::patch('/admin/update/{trip}', [AdminController::class, 'update'])->name('admin.update');
+    Route::patch('/admin/update/{lapangan}', [AdminController::class, 'update'])->name('admin.update');
 });

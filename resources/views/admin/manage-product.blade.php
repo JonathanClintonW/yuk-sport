@@ -11,7 +11,7 @@
 
             <table class="w-full table-auto divide-y divide-gray-500">
                 <thead>
-                    <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-4 dark:text-text-light">
+                    <tr class="grid grid-cols-6 text-center divide-x divide-gray-200 mb-4 dark:text-text-light">
                         <th>Nama Lapangan</th>
                         <th>Alamat</th>
                         <th>Kategori</th>
@@ -22,7 +22,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-500">
                     @foreach ($lapangans as $lapangan)
-                        <tr class="grid grid-cols-7 text-center divide-x divide-gray-200 mb-3 py-3 dark:text-text-light">
+                        <tr class="grid grid-cols-6 text-center divide-x divide-gray-200 mb-3 py-3 dark:text-text-light">
                             <td>{{ $lapangan->nama_lapangan }}</td>
                             <td>{{ $lapangan->alamat }}</td>
                             <td>{{ $lapangan->kategori }}</td>
@@ -56,35 +56,49 @@
 
                                     <div class="mb-4 grid">
                                         <label for="nama_lapangan" class="dark:text-text-light">Nama Lapangan:</label>
-                                        <input type="text" id="nama_lapangan" name="nama_lapangan" class="px-1 py-2 rounded " value="{{ $lapangan->nama_lapangan }}"
-                                            required>
+                                        <input type="text" id="nama_lapangan" name="nama_lapangan"
+                                            class="px-1 py-2 rounded " value="{{ $lapangan->nama_lapangan }}" required>
                                     </div>
 
                                     <div class="mb-4 grid">
                                         <label for="alamat" class="dark:text-text-light">Alamat:</label>
-                                        <input type="text" id="alamat" name="alamat" class="px-1 py-2 rounded" value="{{ $lapangan->alamat }}"
-                                            required>
+                                        <input type="text" id="alamat" name="alamat" class="px-1 py-2 rounded"
+                                            value="{{ $lapangan->alamat }}" required>
                                     </div>
 
                                     <div class="mb-4 grid">
                                         <label for="kategori" class="dark:text-text-light">Kategori:</label>
-                                        <input type="text" id="kategori" name="kategori" class="px-1 py-2 rounded" value="{{ $lapangan->kategori }}"
-                                            required>
+                                        <select name="kategori" id="kategori" class="px-1 py-2 rounded" required
+                                            value="{{ $lapangan->kategori }}">
+                                            <option value="Futsal">Futsal</option>
+                                            <option value="Badminton">Badminton</option>
+                                            <option value="Tennis">Tennis</option>
+                                            <option value="Basket">Basket</option>
+                                            <option value="Volley">Volley</option>
+                                            <option value="Golf">Golf</option>
+                                        </select>
                                     </div>
 
                                     <div class="mb-4 grid">
                                         <label for="harga" class="dark:text-text-light">Harga per Jam:</label>
-                                        <input type="text" id="harga" name="harga" class="px-1 py-2 rounded" value="{{ $lapangan->harga }}"
-                                            required>
+                                        <input type="text" id="harga" name="harga" class="px-1 py-2 rounded"
+                                            value="{{ $lapangan->harga }}" required>
                                     </div>
-                                    
+
                                     <div class="mb-4 grid">
                                         <label for="deskripsi" class="dark:text-text-light">Deskripsi:</label>
                                         <textarea id="deskripsi" name="deskripsi" class="px-1 py-2 h-20 rounded" required>{{ $lapangan->deskripsi }}</textarea>
                                     </div>
 
+                                    <div class="mb-4 grid">
+                                        <label for="path_gambar" class="font-semibold dark:text-text-gray">Gambar:</label>
+                                        <input type="file"
+                                            class="mb-3 rounded focus:ring-0 border border-black dark:bg-text-light"
+                                            name="path_gambar[]" id="path_gambar" multiple
+                                            value="{{ $lapangan->path_gambar }}">
+                                    </div>
                                     <button type="submit"
-                                        class="mb-3 custom-gradient-bg w-40 h-10 text-base  text-text-light text-center flex items-center justify-center rounded duration-300 transition ease-out hover:scale-105 shadow-violet-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color">Update</button>
+                                        class="mb-3 custom-gradient-bg w-40 h-10 text-base  text-text-light text-center flex items-center justify-center rounded duration-300 transition ease-out hover:scale-105 shadow-green-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color">Update</button>
                                 </form>
                             </td>
                         </tr>

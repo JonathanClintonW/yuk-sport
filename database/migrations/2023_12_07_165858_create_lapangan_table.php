@@ -20,9 +20,6 @@ return new class extends Migration
             $table->string('path_gambar');
             $table->text('deskripsi');
             $table->timestamps();
-            $table->unsignedBigInteger('admin_id');
-
-            $table->foreign('admin_id')->references('id')->on('admin');
         });
     }
 

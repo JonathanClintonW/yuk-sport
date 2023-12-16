@@ -12,7 +12,7 @@ class DaftarPesanan extends Model
     protected $table = 'daftar_pesanan';
 
     protected $fillable = [
-        'jumlah_jam',
+        'tanggal_pesanan',
         'total_harga',
     ];
 

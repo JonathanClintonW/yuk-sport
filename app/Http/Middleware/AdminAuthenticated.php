@@ -8,20 +8,12 @@ use Illuminate\Support\Facades\Auth;
 
 class AdminAuthenticated
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
-        if (Auth::guard('admin')->user()) {
+        if (Auth::guard('admin')->check()) {
             return $next($request);
         }
-        if ($request->ajax() || $request->wantsJson()) {
-            return response('Unauthorized.', 401);
-        } else {
-            return redirect(route('login'));
-        }
+
+        return redirect(route('login'))->with('error', 'You are not authenticated as an admin.');
     }
 }

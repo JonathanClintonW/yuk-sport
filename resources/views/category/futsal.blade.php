@@ -33,13 +33,13 @@
                             <div>
                                 @if (!empty($lapangan->path_gambar))
                                     @foreach (json_decode($lapangan->path_gambar) as $image)
-                                        <img src="{{ asset('content-images/' . $image) }}" alt="{{ $lapangan->destination }}"
+                                        <img src="{{ asset('content-images/' . $image) }}" alt="{{ $lapangan->nama_lapangan }}"
                                             class="w-64 h-80 object-cover rounded-xl mb-2">
                                     @endforeach
                                 @endif
                             </div>
                             <div class="mb-2">
-                                <a href="{{ route('lapangan.show', ['slug' => $lapangan->nama_lapangan]) }}" class="font-bold text-lg">
+                                <a href="{{ route('category.show', ['id' => $lapangan->id]) }}" class="font-bold text-lg">
                                     {{ $lapangan->nama_lapangan }}
                                 </a>
                             </div>
@@ -48,11 +48,11 @@
                                 {{ $lapangan->alamat }}
                             </div>
                             <div class="mb-2 font-medium text-base">
-                                {{ $lapangan->harga }}
+                                Rp.{{ $lapangan->harga }} /jam
                             </div>
                             <div
                                 class="text-center mx-3 mb-1 py-2 custom-gradient-bg rounded-md transition-all duration-300 hover:scale-105 shadow-green-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color">
-                                <a href="{{ route('lapangan.show', ['nama_lapangan' => $lapangan->nama_lapangan]) }}" class="text-text-light">View
+                                <a href="{{ route('category.show', ['id' => $lapangan->id]) }}" class="text-text-light">View
                                     Details</a>
                             </div>
                         </div>

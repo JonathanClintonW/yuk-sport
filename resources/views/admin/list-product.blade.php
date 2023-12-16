@@ -8,49 +8,29 @@
             </div>
 
             <ul>
-                @foreach ($trips as $trip)
+                @foreach ($lapangans as $lapangan)
                     <li class="mb-3">
-                        <h2 class="font-bold text-lg dark:text-text-light">Destination - {{ $trip->destination }}</h2>
+                        <h2 class="font-bold text-lg dark:text-text-light uppercase">Lapangan - {{ $lapangan->nama_lapangan }}</h2>
                         <hr class="h-1 bg-dark-primary-color dark:bg-text-light mx-auto my-3">
                         <div class="grid md:grid-cols-3 lg:grid-cols-4">
                             <dl class="mb-3">
-                                <dt class="font-bold dark:text-text-light">Slug</dt>
-                                <dd class=" dark:text-text-gray">{{ $trip->slug }}</dd>
+                                <dt class="font-bold dark:text-text-light">Alamat</dt>
+                                <dd class=" dark:text-text-gray">{{ $lapangan->alamat }}</dd>
                             </dl>
 
                             <dl class="mb-3 mr-4">
-                                <dt class="font-bold dark:text-text-light">Airlines</dt>
-                                <dd class="dark:text-text-gray">{{ $trip->airlines }}</dd>
+                                <dt class="font-bold dark:text-text-light">Kategori</dt>
+                                <dd class="dark:text-text-gray">{{ $lapangan->kategori }}</dd>
                             </dl>
 
                             <dl class="mb-3 mr-4">
-                                <dt class="font-bold dark:text-text-light">Transit</dt>
-                                <dd class="dark:text-text-gray">{{ $trip->transit }}</dd>
+                                <dt class="font-bold dark:text-text-light">Harga</dt>
+                                <dd class="dark:text-text-gray">{{ $lapangan->harga }}</dd>
                             </dl>
 
                             <dl class="mb-3 mr-4">
-                                <dt class="font-bold dark:text-text-light">Departure Date</dt>
-                                <dd class="dark:text-text-gray">{{ $trip->departure_date }}</dd>
-                            </dl>
-
-                            <dl class="mb-3 mr-4">
-                                <dt class="font-bold dark:text-text-light">Return Date</dt>
-                                <dd class="dark:text-text-gray">{{ $trip->return_date }}</dd>
-                            </dl>
-
-                            <dl class="mb-3 mr-4">
-                                <dt class="font-bold dark:text-text-light">Price</dt>
-                                <dd class="dark:text-text-gray">${{ $trip->price }}</dd>
-                            </dl>
-
-                            <dl class="mb-3 mr-4 md:col-span-3 lg:col-span-1">
-                                <dt class="font-bold dark:text-text-light">Description</dt>
-                                <dd class="dark:text-text-gray text-justify">{{ $trip->description }}</dd>
-                            </dl>
-
-                            <dl class="mb-3 mr-4">
-                                <dt class="font-bold dark:text-text-light">Total Pax</dt>
-                                <dd class="dark:text-text-gray">{{ $trip->total_pax }} Pax</dd>
+                                <dt class="font-bold dark:text-text-light">Deskripsi</dt>
+                                <dd class="dark:text-text-gray">{{ $lapangan->deskripsi }}</dd>
                             </dl>
                         </div>
                     </li>

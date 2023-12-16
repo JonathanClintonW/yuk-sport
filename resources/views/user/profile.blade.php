@@ -27,21 +27,21 @@
                         <div class="mb-4 flex flex-col items-center">
                             <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Name</label>
                             <input id="name" type="text"
-                                class="px-2 py-2 w-full rounded-xl border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
+                                class="px-2 py-2 w-full rounded-xl border-1 border-dark-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
                                 name="name" value="{{ old('name', $user->name) }}">
                         </div>
 
                         <div class="mb-4 flex flex-col items-center">
                             <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone</label>
                             <input id="phone" type="text"
-                                class="px-2 py-2 w-full rounded-xl border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
+                                class="px-2 py-2 w-full rounded-xl border-1 border-dark-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
                                 name="phone" value="{{ old('phone', $user->phone) }}">
                         </div>
 
                         <div class="mb-4 flex flex-col items-center">
                             <label for="address" class="block text-sm font-semibold text-gray-700 mb-2">Address</label>
                             <textarea id="address"
-                                class="px-2 py-2 w-full rounded-xl border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
+                                class="px-2 py-2 w-full rounded-xl border-1 border-dark-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
                                 name="address">{{ old('address', $user->address) }}</textarea>
                         </div>
 
@@ -49,7 +49,7 @@
                             <label for="password" class="block text-sm font-semibold text-gray-700 mb-2">Password</label>
                             <div class="relative w-full">
                                 <input id="password" type="password"
-                                    class="pl-2 py-2 rounded-xl pr-10 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
+                                    class="pl-2 py-2 rounded-xl pr-10 border-1 border-dark-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
                                     name="password">
                                 <button type="button" class="absolute top-2 right-2 focus:outline-none"
                                     id="password-toggle">
@@ -69,7 +69,7 @@
                                 Password</label>
                             <div class="relative w-full">
                                 <input id="password-confirm" type="password"
-                                    class="pl-2 py-2 rounded-xl pr-10 border-1 border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
+                                    class="pl-2 py-2 rounded-xl pr-10 border-1 border-dark-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 bg-transparent"
                                     name="password_confirmation">
                                 <button type="button" class="absolute top-2 right-2 focus:outline-none"
                                     id="password-confirm-toggle">
@@ -86,7 +86,7 @@
 
                         <div class="flex justify-center">
                             <button type="submit"
-                                class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-violet-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-text-light px-4 py-2 rounded-md">
+                                class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-green-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-text-light px-4 py-2 rounded-md">
                                 Save Changes
                             </button>
                         </div>
@@ -97,7 +97,7 @@
                 class="px-5 py-5 mb-10 bg-text-light rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] dark:shadow-stone-800">
                 <h1
                     class="text-xl sm:text-2xl md:text-3xl font-bold text-center leading-normal mb-3 transition-all duration-200">
-                    TRIP ORDER</h1>
+                    ORDER LIST</h1>
                 <hr class="mx-auto my-2 w-10/12">
                 @if ($orders !== null && !$orders->isEmpty())
                     <div class="mb-4">

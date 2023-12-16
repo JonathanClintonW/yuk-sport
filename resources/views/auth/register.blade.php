@@ -6,7 +6,7 @@
             <a href="{{ route('index') }}">
                 <h1
                     class="mx-1.5 mb-1 font-bold text-xl bg-clip-text bg-gradient-to-r text-text-dark-green dark:text-primary-color">
-                    ASTRO TRAVEL
+                    YUK SPORT
                 </h1>
             </a>
             <p class="mx-1.5 mb-4 font-medium text-base dark:text-text-light">Daftar sebagai Pengguna untuk menyewa lapangan</p>

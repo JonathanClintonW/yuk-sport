@@ -8,6 +8,11 @@ use App\Models\Lapangan;
 
 class AdminController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+
     public function showAdminIndex()
     {
         return view('/admin/admin-index');
@@ -27,25 +32,24 @@ class AdminController extends Controller
 
     public function showListProduct()
     {
-        $trips = Trip::all();
+        $lapangans = Lapangan::all();
 
-        return view('/admin/list-product', compact('trips'));
+        return view('/admin/list-product', compact('lapangans'));
     }
 
     public function store(Request $request)
     {
+
         $validatedData = $request->validate([
             'nama_lapangan' => 'required|string',
             'alamat' => 'required|string',
             'kategori' => 'required|string',
             'harga' => 'required|numeric',
             'deskripsi' => 'required|string',
-            'image.*' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $lapangan = new Lapangan($validatedData);
-        $adminId = Auth::id();
-        $lapangan->admin_id = $adminId;
 
         if ($request->hasFile('path_gambar')) {
             $path_gambar = [];
@@ -70,6 +74,7 @@ class AdminController extends Controller
 
     public function update(Request $request, Lapangan $lapangan)
     {
+        $lapangan = Lapangan::findOrFail($lapangan->id);
 
         $formData = $request->only([
             'nama_lapangan',
@@ -79,15 +84,14 @@ class AdminController extends Controller
             'deskripsi',
         ]);
 
-        $lapangan->fill($formData);
-        $lapangan->save();
+        $lapangan->update($formData);
 
         return redirect()->route('admin.manage')->with('success', 'Lapangan updated successfully');
     }
 
-    public function delete(Trip $trip)
+    public function delete(Lapangan $lapangan)
     {
-        $path_gambar = json_decode($trip->path_gambar, true);
+        $path_gambar = json_decode($lapangan->path_gambar, true);
         foreach ($path_gambar as $image) {
             $imagePath = public_path('content-images/' . $image);
             if (file_exists($imagePath)) {
@@ -95,8 +99,8 @@ class AdminController extends Controller
             }
         }
 
-        $trip->delete();
+        $lapangan->delete();
 
-        return redirect()->route('admin.manage')->with('success', 'Trip deleted successfully');
+        return redirect()->route('admin.manage')->with('success', 'Lapangan deleted successfully');
     }
 }

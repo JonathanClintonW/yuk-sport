@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Trip;
+use App\Models\Lapangan;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
@@ -50,12 +50,13 @@ class CategoryController extends Controller
 
     public function show($id)
     {
-        $trip = DB::table('lapangan')->where('id', $id)->first();
-
-        if (!$id) {
+        $lapangan = Lapangan::find($id);
+    
+        if (!$lapangan) {
             abort(404);
         }
-
-        return view('category.show', compact('id'));
+    
+        return view('category.show', compact('lapangan'));
     }
+    
 }

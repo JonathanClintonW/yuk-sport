@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('daftar_pesanan', function (Blueprint $table) {
             $table->id();
-            $table->string('jumlah_jam');
+            $table->dateTime('tanggal_pesanan');
             $table->string('total_harga');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');

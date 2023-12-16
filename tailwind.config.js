@@ -43,7 +43,7 @@ export default {
         'dark-secondary-color': '#5e0034',
         
         // Dark Background
-        'dark-primary-bg': '#97FB57',
+        'dark-primary-bg': '#121212',
         'dark-secondary-bg': '#121212',
 
         // Text Color
