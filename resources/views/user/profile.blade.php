@@ -94,19 +94,37 @@
                 </div>
             </section>
             <section
-                class="px-5 py-5 mb-10 bg-text-light rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] dark:shadow-stone-800">
+                class="px-5 py-5 mb-10 mx-10 max-w-4xl bg-text-light rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] dark:shadow-stone-800">
                 <h1
                     class="text-xl sm:text-2xl md:text-3xl font-bold text-center leading-normal mb-3 transition-all duration-200">
-                    ORDER LIST</h1>
+                    DAFTAR PESANAN</h1>
                 <hr class="mx-auto my-2 w-10/12">
-                @if ($orders !== null && !$orders->isEmpty())
+                @if (!$orders->isEmpty())
                     <div class="mb-4">
-                        <h2 class="text-lg font-semibold mb-2">Orders</h2>
                         <ul>
                             @foreach ($orders as $order)
-                                <li>
-                                    <span class="text-gray-700">Order Title: {{ $order->title }}</span>
-                                    <span class="text-gray-700">Order Date: {{ $order->created_at }}</span>
+                                <li class="grid items-center">
+                                    <div class="flex justify-between mb-3 gap-5 px-2">
+                                        <h2 class="font-semibold text-black">Lapangan: </h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->nama_lapangan }}</h2>
+                                    </div>
+                                    <div class="flex justify-between mb-3 gap-5 px-2">
+                                        <h2 class="font-semibold text-black">Alamat: </h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->alamat }}</h2>
+                                    </div>
+                                    <div class="flex justify-between mb-3 gap-5 px-2">
+                                        <h2 class="font-semibold text-black">Total Jam: </h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->total_jam }}</h2>
+                                    </div>
+                                    <div class="flex justify-between mb-3 gap-5 px-2">
+                                        <h2 class="font-semibold text-black">Total Harga: </h2>
+                                        <h2 class="text-gray-700 text-right">Rp. {{ number_format($order->total_harga) }}</h2>
+                                    </div>
+                                    <div class="flex justify-between mb-3 gap-5 px-2">
+                                        <h2 class="font-semibold text-black">Status Pembayaran: </h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->pembayaran->status_pembayaran }}</h2>
+                                    </div>
+                                    <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                                 </li>
                             @endforeach
                         </ul>
@@ -114,10 +132,10 @@
                 @else
                     <p class="text-gray-700">No orders found for this user.</p>
                 @endif
+
             </section>
         </div>
         <script>
-            // Password show/hide toggle
             document.querySelector('#password-toggle').addEventListener('click', function() {
                 togglePasswordVisibility('password');
             });

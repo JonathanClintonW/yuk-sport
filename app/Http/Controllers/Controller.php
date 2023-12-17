@@ -26,11 +26,5 @@ class Controller extends BaseController
     public function showLapangan()
     {
         return view('lapangan');
-    }
-
-    public function showAbout()
-    {
-        return view('about');
-    }
-    
+    }  
 }

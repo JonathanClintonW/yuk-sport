@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_lapangan')->unique;
             $table->string('alamat');
             $table->string('kategori');
-            $table->string('harga');
+            $table->integer('harga');
             $table->string('path_gambar');
             $table->text('deskripsi');
             $table->timestamps();

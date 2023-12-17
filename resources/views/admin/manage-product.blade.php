@@ -6,7 +6,7 @@
 
             <div
                 class="px-2 pt-1 mb-4 h-12 flex place-items-center items-center justify-center bg-dark-primary-color dark:bg-text-light rounded-xl">
-                <h1 class=" text-lg font-bold text-text-light dark:text-dark-primary-color">MANAGE LAPANGAN</h1>
+                <h1 class=" text-lg font-bold text-text-light dark:text-black">MANAGE LAPANGAN</h1>
             </div>
 
             <table class="w-full table-auto divide-y divide-gray-500">
@@ -70,6 +70,7 @@
                                         <label for="kategori" class="dark:text-text-light">Kategori:</label>
                                         <select name="kategori" id="kategori" class="px-1 py-2 rounded" required
                                             value="{{ $lapangan->kategori }}">
+                                            <option value="{{ $lapangan->kategori }}">Pilih Kategori</option>
                                             <option value="Futsal">Futsal</option>
                                             <option value="Badminton">Badminton</option>
                                             <option value="Tennis">Tennis</option>
@@ -111,13 +112,16 @@
     <script>
         function toggleEditForm(lapanganId) {
             const editForm = document.getElementById(`edit-form-${lapanganId}`);
-            if (editForm.style.display === 'none') {
-                // Show the edit form
-                editForm.style.display = 'table-row';
-            } else {
-                // Hide the edit form
+            if (editForm.style.display === '' || editForm.style.display === 'table-row') {
                 editForm.style.display = 'none';
+            } else {
+                document.querySelectorAll('[id^="edit-form-"]').forEach(form => {
+                    form.style.display = 'none';
+                });
+                
+                editForm.style.display = 'table-row';
             }
         }
     </script>
+    
 @endsection

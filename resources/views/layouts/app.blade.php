@@ -29,7 +29,7 @@
     </script>
 </head>
 
-<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth text-black-color">
+<body class="font-poppins overflow-y-scroll no-scrollbar scroll-smooth text-black-color dark:bg-dark-primary-bg">
     <div id="app" class="dark:bg-dark-primary-bg">
         <nav
             class="bg-white relative translate-y-[14px] px-3.5 mx-6 rounded-2xl flex h-12 items-center justify-between z-10">
@@ -53,11 +53,6 @@
                 <li
                     class="{{ Route::currentRouteName() === 'lapangan' ? 'pl-4 custom-gradient-bg px-2 py-0.5 rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
                     <a href="{{ route('lapangan') }}"><span class="link-underline">{{ __('LAPANGAN') }}</span></a>
-                </li>
-
-                <li
-                    class="{{ Route::currentRouteName() === 'about' ? 'pl-4 custom-gradient-bg px-2 py-0.5 rounded-lg shadow-gray-500 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1)]' : '' }}">
-                    <a href="{{ route('about') }}"><span class="link-underline">{{ __('ABOUT') }}</span></a>
                 </li>
 
                 @auth('web')
@@ -145,10 +140,6 @@
                         <li class="mb-1">
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
                                 href="{{ route('lapangan') }}">LAPANGAN</a>
-                        </li>
-                        <li class="mb-1">
-                            <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
-                                href="{{ route('about') }}">ABOUT</a>
                         </li>
                     </ul>
                 </div>

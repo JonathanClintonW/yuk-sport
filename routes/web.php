@@ -18,10 +18,6 @@ Route::get('/', [Controller::class, 'showIndex'])->name('index');
 
 Route::get('/lapangan', [Controller::class, 'showLapangan'])->name('lapangan');
 
-Route::get('/about', [Controller::class, 'showAbout'])->name('about');
-
-Route::get('stripe', [StripePaymentController::class, 'paymentStripe'])->name('addmoney.paymentstripe');
-
 // Route for Admin Register
 Route::get('/admin/register', [Controller::class, 'showAdminRegistration'])->name('admin.register');
 
@@ -44,12 +40,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/category/{id}', [CategoryController::class, 'show'])->name('category.show');
 
-    
     Route::get('/user/profile', [UserController::class, 'showProfile'])->name('user.profile');
     
     Route::patch('/user/update-profile', [UserController::class, 'updateProfile'])->name('user.update-profile');
 
-    Route::get('/download/{trip}', [TripController::class, 'download'])->name('download');
+    Route::get('/order/{lapanganId}', [OrderController::class, 'showOrder'])->name('order');
 
     Route::post('/order/create', [OrderController::class, 'create'])->name('order.create');
 });
@@ -59,15 +54,17 @@ Route::middleware(['admin'])->group(function () {
 
     Route::post('/admin/lapangan', [AdminController::class, 'store'])->name('admin.lapangan.store');
 
-    Route::get('/manage-product', [AdminController::class, 'showManageProduct'])->name('admin.manage');
+    Route::get('/admin/manage-lapangan', [AdminController::class, 'showManageProduct'])->name('admin.manage');
 
-    Route::get('/add-product', [AdminController::class, 'showAddProduct'])->name('admin.add');
+    Route::get('/admin/add-lapangan', [AdminController::class, 'showAddProduct'])->name('admin.add');
 
-    Route::get('/list-product', [AdminController::class, 'showListProduct'])->name('admin.list');
+    Route::get('/admin/list-lapangan', [AdminController::class, 'showListProduct'])->name('admin.list');
 
     Route::get('/admin/delete/{lapangan}', [AdminController::class, 'delete'])->name('admin.delete');
 
     Route::get('/admin/edit/{lapangan}', [AdminController::class, 'edit'])->name('admin.edit');
 
     Route::patch('/admin/update/{lapangan}', [AdminController::class, 'update'])->name('admin.update');
+
+    Route::put('/admin/update/{pembayaran}', [AdminController::class, 'changeStatus'])->name('admin.changeStatus');
 });

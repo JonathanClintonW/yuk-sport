@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Lapangan;
+use App\Models\DaftarPesanan;
+use App\Models\Pembayaran;
 
 class AdminController extends Controller
 {
@@ -15,7 +17,8 @@ class AdminController extends Controller
 
     public function showAdminIndex()
     {
-        return view('/admin/admin-index');
+        $orders = DaftarPesanan::with(['lapangan', 'user'])->simplePaginate(5);
+        return view('/admin/admin-index', compact('orders'));
     }
 
     public function showManageProduct()
@@ -46,7 +49,7 @@ class AdminController extends Controller
             'kategori' => 'required|string',
             'harga' => 'required|numeric',
             'deskripsi' => 'required|string',
-            'image.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'path_gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
         $lapangan = new Lapangan($validatedData);
@@ -102,5 +105,13 @@ class AdminController extends Controller
         $lapangan->delete();
 
         return redirect()->route('admin.manage')->with('success', 'Lapangan deleted successfully');
+    }
+
+    public function changeStatus(Request $request, Pembayaran $pembayaran)
+    {
+        $pembayaran->status_pembayaran = $request->input('status_pembayaran');
+        $pembayaran->save();
+    
+        return redirect()->back()->with('status', 'Pembayaran status updated successfully.');
     }
 }

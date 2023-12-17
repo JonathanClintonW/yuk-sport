@@ -14,15 +14,14 @@ return new class extends Migration
         Schema::create('daftar_pesanan', function (Blueprint $table) {
             $table->id();
             $table->dateTime('tanggal_pesanan');
-            $table->string('total_harga');
+            $table->integer('total_jam');
+            $table->integer('total_harga');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('lapangan_id');
-            $table->unsignedBigInteger('pembayaran_id');
-
+            
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('lapangan_id')->references('id')->on('lapangan');
-            $table->foreign('pembayaran_id')->references('id')->on('pembayaran');
         });
     }
 

@@ -6,7 +6,6 @@
             <a href="{{ route('index') }}">
                 <h1 class="mx-1.5 mb-1 font-bold text-xl bg-clip-text bg-gradient-to-r text-text-dark-green dark:text-primary-color">
                     YUK SPORT 
-                    00
                 </h1>
             </a>
             

@@ -6,7 +6,7 @@
             style="background-image: url('{{ asset('images/soccer-main.jpg') }}'); background-size: cover;">
             <h1
                 class="absolute select-none inset-0 flex items-center justify-center font-bold text-text-light z-10 text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-all duration-200">
-                Futsal</h1>
+                FUTSAL</h1>
         </div>
     </div>
 
@@ -29,7 +29,7 @@
                     class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 text-center align-center justify-items-center gap-5">
                     @foreach ($futsallapangan as $lapangan)
                         <div
-                            class="mb-8 p-3 bg-white rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] dark:shadow-stone-800">
+                            class="mb-8 p-3 bg-white rounded-2xl shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] dark:shadow-stone-800 max-w-[280px]">
                             <div>
                                 @if (!empty($lapangan->path_gambar))
                                     @foreach (json_decode($lapangan->path_gambar) as $image)

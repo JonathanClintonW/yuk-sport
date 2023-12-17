@@ -3,7 +3,7 @@
 @section('content')
     <div class="h-[50vh] relative">
         <h1
-            class="absolute select-none inset-0 flex items-center justify-center font-bold z-10 text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-all duration-200">
+            class="text-primary-color absolute select-none inset-0 flex items-center justify-center font-bold z-10 text-4xl md:text-5xl lg:text-6xl xl:text-7xl transition-all duration-200">
             YukSport</h1>
         <div class="flex items-center justify-center w-screen h-[50vh] mb-12 bg-fixed bg-center bg-cover -translate-y-[48px]"
             style="background-image: url('{{ asset('images/vienna-reyes.jpg') }}'); background-size: cover;">

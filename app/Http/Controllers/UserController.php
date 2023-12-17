@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
-
+use App\Models\DaftarPesanan;
 use App\Models\User;
 
 class UserController extends Controller
@@ -14,7 +14,7 @@ class UserController extends Controller
     public function showProfile()
     {
         $user = User::find(auth()->user()->id);
-        $orders = $user->Orders;
+        $orders = $user->DaftarPesanan;
         return view('user.profile', compact('user', 'orders'));
     }
 
