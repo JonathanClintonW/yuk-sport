@@ -3,45 +3,45 @@
 @section('content')
     <div class="p-4 sm:ml-64">
         <div class="p-4 border-2 border-dashed rounded-lg border-dark-primary-color dark:border-text-light">
-            <h2 class="text-2xl font-semibold mb-4">Daftar Pesanan</h2>
+            <h2 class="text-2xl font-semibold mb-4 dark:text-text-light">Daftar Pesanan</h2>
             @foreach ($orders as $order)
                 <div class="mb-4">
                     <div class="grid grid-cols-2">
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Nama Pemesan:</p>
-                            <p>{{ $order->user->name }}</p>
+                            <p class="font-semibold dark:text-text-light">Nama Pemesan:</p>
+                            <p class="dark:text-text-gray">{{ $order->user->name }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">No Telp:</p>
-                            <p>{{ $order->user->phone }}</p>
+                            <p class="font-semibold dark:text-text-light">No Telp:</p>
+                            <p class="dark:text-text-gray">{{ $order->user->phone }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Email:</p>
-                            <p>{{ $order->user->email }}</p>
+                            <p class="font-semibold dark:text-text-light">Email:</p>
+                            <p class="dark:text-text-gray">{{ $order->user->email }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Nama Lapangan:</p>
-                            <p>{{ $order->lapangan->nama_lapangan }}</p>
+                            <p class="font-semibold dark:text-text-light">Nama Lapangan:</p>
+                            <p class="dark:text-text-gray">{{ $order->lapangan->nama_lapangan }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Alamat:</p>
-                            <p>{{ $order->lapangan->alamat }}</p>
+                            <p class="font-semibold dark:text-text-light">Alamat:</p>
+                            <p class="dark:text-text-gray">{{ $order->lapangan->alamat }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Tanggal Pesanan:</p>
-                            <p>{{ $order->tanggal_pesanan }}</p>
+                            <p class="font-semibold dark:text-text-light">Tanggal Pesanan:</p>
+                            <p class="dark:text-text-gray">{{ $order->tanggal_pesanan }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Total Jam:</p>
-                            <p>{{ $order->total_jam }}</p>
+                            <p class="font-semibold dark:text-text-light">Total Jam:</p>
+                            <p class="dark:text-text-gray">{{ $order->total_jam }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Total Harga:</p>
-                            <p>Rp. {{ number_format($order->total_harga) }}</p>
+                            <p class="font-semibold dark:text-text-light">Total Harga:</p>
+                            <p class="dark:text-text-gray">Rp. {{ number_format($order->total_harga) }}</p>
                         </div>
 
                         <div class="flex gap-2 mb-2">
-                            <p class="font-semibold">Status Pembayaran:</p>
+                            <p class="font-semibold dark:text-text-light">Status Pembayaran:</p>
                             <form action="{{ route('admin.changeStatus', ['pembayaran' => $order->pembayaran->id]) }}"
                                 method="POST">
                                 @csrf
@@ -64,10 +64,10 @@
                         </div>
                     </div>
                     <div class="gap-2 mb-2">
-                        <p class="font-semibold mb-2">Bukti Pembayaran:</p>
+                        <p class="font-semibold mb-2 dark:text-text-light">Bukti Pembayaran:</p>
                         <img
                                 src="{{ asset('content-payment/' . $order->pembayaran->bukti_pembayaran) }}"
-                                class="h-[400px]" alt="Bukti Pembayaran">
+                                class="h-[400px] dark:text-text-gray" alt="Bukti Pembayaran">
                     </div>
                     <hr class="h-px my-8 bg-gray-900 border-0 dark:bg-gray-700">
                 </div>

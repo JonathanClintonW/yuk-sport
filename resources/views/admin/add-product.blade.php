@@ -9,11 +9,11 @@
                 @csrf
 
                 <label for="nama_lapangan" class="font-semibold dark:text-text-gray">Nama Lapangan:</label>
-                <input type="text" name="nama_lapangan" id="nama_lapangan" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"
+                <input type="text" name="nama_lapangan" id="nama_lapangan" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" placeholder="Nama Lapangan"
                     required>
 
                 <label for="alamat" class="font-semibold dark:text-text-gray">Alamat:</label>
-                <input type="text" name="alamat" id="alamat" class="mb-3 px-1 py-2 border-black rounded focus:ring-0"
+                <input type="text" name="alamat" id="alamat" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" placeholder="Alamat"
                     required>
 
                 <label for="kategori" class="font-semibold dark:text-text-gray">Kategori:</label>
@@ -28,10 +28,10 @@
 
                 <label for="harga" class="font-semibold dark:text-text-gray">Harga:</label>
                 <input type="number" name="harga" id="harga" step="0.01"
-                    class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required>
+                    class="mb-3 px-1 py-2 border-black rounded focus:ring-0" placeholder="Harga" required>
 
                 <label for="deskripsi" class="font-semibold dark:text-text-gray">Deskripsi:</label>
-                <textarea name="deskripsi" id="deskripsi" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" required></textarea>
+                <textarea name="deskripsi" id="deskripsi" class="mb-3 px-1 py-2 border-black rounded focus:ring-0" placeholder="Deskripsi" required></textarea>
 
                 <label for="path_gambar" class="font-semibold dark:text-text-gray">Gambar:</label>
                 <input type="file" class="mb-3 rounded focus:ring-0 border border-black dark:bg-text-light"
