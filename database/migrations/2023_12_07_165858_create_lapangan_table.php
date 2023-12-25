@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('harga');
             $table->string('path_gambar');
             $table->text('deskripsi');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

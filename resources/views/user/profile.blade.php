@@ -106,11 +106,11 @@
                                 <li class="grid items-center">
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Lapangan: </h2>
-                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->nama_lapangan }}</h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->nama_lapangan ?? 'Data Tidak Ditemukan' }}</h2>
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Alamat: </h2>
-                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->alamat }}</h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->alamat ?? 'Data Tidak Ditemukan' }}</h2>
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Total Jam: </h2>

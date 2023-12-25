@@ -94,6 +94,7 @@ class AdminController extends Controller
 
     public function delete(Lapangan $lapangan)
     {
+        
         $path_gambar = json_decode($lapangan->path_gambar, true);
         foreach ($path_gambar as $image) {
             $imagePath = public_path('content-images/' . $image);

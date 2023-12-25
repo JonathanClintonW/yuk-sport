@@ -10,7 +10,7 @@
                 @csrf
                 <div
                     class="mb-5 px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)]">
-                    <h2 class="text-center font-semibold text-lg md:text-xl mb-3">Form Pesannan</h2>
+                    <h2 class="text-center font-semibold text-lg md:text-xl mb-3">Form Pesanan</h2>
                     <hr class="w-48 h-1 my-3 mx-auto bg-black border-0 rounded">
 
                     <div class="mb-3 mx-0">

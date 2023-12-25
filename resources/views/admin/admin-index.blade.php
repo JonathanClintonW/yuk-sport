@@ -21,11 +21,11 @@
                         </div>
                         <div class="flex gap-2 mb-2">
                             <p class="font-semibold dark:text-text-light">Nama Lapangan:</p>
-                            <p class="dark:text-text-gray">{{ $order->lapangan->nama_lapangan }}</p>
+                            <p class="dark:text-text-gray">{{ $order->lapangan->nama_lapangan ?? 'Data Tidak Ditemukan' }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
                             <p class="font-semibold dark:text-text-light">Alamat:</p>
-                            <p class="dark:text-text-gray">{{ $order->lapangan->alamat }}</p>
+                            <p class="dark:text-text-gray">{{ $order->lapangan->alamat ?? 'Data Tidak Ditemukan' }}</p>
                         </div>
                         <div class="flex gap-2 mb-2">
                             <p class="font-semibold dark:text-text-light">Tanggal Pesanan:</p>

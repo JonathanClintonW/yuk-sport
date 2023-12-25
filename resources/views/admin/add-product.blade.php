@@ -5,7 +5,7 @@
         <div class="p-4 sm:ml-64 border-2 rounded-lg border-dark-primary-color">
             <h1 class="text-xl font-bold mb-3 dark:text-text-light">Tambah Lapangan</h1>
             <hr class="h-1 bg-dark-primary-color dark:bg-text-light mx-auto mb-3">
-            <form action="{{ route('admin.lapangan.store') }}" class="mt-3 grid" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.lapangan.store') }}" class="mt-3 grid" method="POST" enctype="multipart/form-data" onsubmit="return disableButton()">
                 @csrf
 
                 <label for="nama_lapangan" class="font-semibold dark:text-text-gray">Nama Lapangan:</label>
@@ -38,10 +38,31 @@
                     name="path_gambar[]" id="path_gambar" multiple required>
 
                 <div class="flex justify-center">
-                    <button type="submit" class="custom-gradient-bg py-2 px-4 rounded font-medium text-text-light">Tambah
+                    <button type="submit" id="submitButton" class="custom-gradient-bg py-2 px-4 rounded font-medium text-text-light">Tambah
                         Lapangan</button>
                 </div>
             </form>
         </div>
+        <script>
+            function disableButton() {
+                const submitButton = document.getElementById('submitButton');
+                if (submitButton.disabled) {
+                    event.preventDefault();
+                    return false;
+                }
+
+                submitButton.disabled = true;
+                submitButton.innerHTML = 'Processing...';
+
+                // You may also want to add server-side validation here
+
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Tambah Lapangan';
+                }, 5000);
+
+                return true;
+            }
+        </script>
     </div>
 @endsection
