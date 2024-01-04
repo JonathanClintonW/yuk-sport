@@ -14,6 +14,7 @@ class Pembayaran extends Model
     protected $fillable = [
         'metode_pembayaran',
         'jumlah_pembayaran',
+        'status_pembayaran',
     ];
 
     public function daftarPesanan()

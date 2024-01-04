@@ -16,6 +16,7 @@ return new class extends Migration
             $table->dateTime('tanggal_pesanan');
             $table->integer('total_jam');
             $table->integer('total_harga');
+            $table->string('status_pesanan');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('lapangan_id');

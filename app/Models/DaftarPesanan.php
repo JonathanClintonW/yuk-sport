@@ -15,6 +15,7 @@ class DaftarPesanan extends Model
         'tanggal_pesanan',
         'total_jam',
         'total_harga',
+        'status_pesanan',
     ];
 
     public function user()

@@ -21,7 +21,8 @@
                         </div>
                         <div class="flex gap-2 mb-2">
                             <p class="font-semibold dark:text-text-light">Nama Lapangan:</p>
-                            <p class="dark:text-text-gray">{{ $order->lapangan->nama_lapangan ?? 'Data Tidak Ditemukan' }}</p>
+                            <p class="dark:text-text-gray">{{ $order->lapangan->nama_lapangan ?? 'Data Tidak Ditemukan' }}
+                            </p>
                         </div>
                         <div class="flex gap-2 mb-2">
                             <p class="font-semibold dark:text-text-light">Alamat:</p>
@@ -42,7 +43,7 @@
 
                         <div class="flex gap-2 mb-2">
                             <p class="font-semibold dark:text-text-light">Status Pembayaran:</p>
-                            <form action="{{ route('admin.changeStatus', ['pembayaran' => $order->pembayaran->id]) }}"
+                            <form action="{{ route('admin.status.pembayaran', ['pembayaran' => $order->pembayaran->id]) }}"
                                 method="POST">
                                 @csrf
                                 @method('PUT')
@@ -62,12 +63,32 @@
                                 </select>
                             </form>
                         </div>
+                        <div class="flex gap-2 mb-2">
+                            <p class="font-semibold dark:text-text-light">Status Pesanan:</p>
+                            <form action="{{ route('admin.status.pesanan', ['pesanan' => $order->id]) }}" method="POST">
+                                @csrf
+                                @method('PUT')
+                                <select name="status_pesanan" class="rounded pl-2" onchange="this.form.submit()">
+                                    <option value="Pending" {{ $order->status_pesanan === 'Pending' ? 'selected' : '' }}>
+                                        Pending
+                                    </option>
+                                    <option value="Gagal" {{ $order->status_pesanan === 'Gagal' ? 'selected' : '' }}>
+                                        Gagal
+                                    </option>
+                                    <option value="Berhasil" {{ $order->status_pesanan === 'Berhasil' ? 'selected' : '' }}>
+                                        Berhasil
+                                    </option>
+                                    <option value="Selesai" {{ $order->status_pesanan === 'Selesai' ? 'selected' : '' }}>
+                                        Selesai
+                                    </option>
+                                </select>
+                            </form>
+                        </div>
                     </div>
                     <div class="gap-2 mb-2">
                         <p class="font-semibold mb-2 dark:text-text-light">Bukti Pembayaran:</p>
-                        <img
-                                src="{{ asset('content-payment/' . $order->pembayaran->bukti_pembayaran) }}"
-                                class="h-[400px] dark:text-text-gray" alt="Bukti Pembayaran">
+                        <img src="{{ asset('content-payment/' . $order->pembayaran->bukti_pembayaran) }}"
+                            class="h-[400px] dark:text-text-gray" alt="Bukti Pembayaran">
                     </div>
                     <hr class="h-px my-8 bg-gray-900 border-0 dark:bg-gray-700">
                 </div>

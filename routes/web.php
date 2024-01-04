@@ -66,5 +66,7 @@ Route::middleware(['admin'])->group(function () {
 
     Route::patch('/admin/update/{lapangan}', [AdminController::class, 'update'])->name('admin.update');
 
-    Route::put('/admin/update/{pembayaran}', [AdminController::class, 'changeStatus'])->name('admin.changeStatus');
+    Route::put('/admin/update/pembayaran/{pembayaran}', [AdminController::class, 'changePaymentStatus'])->name('admin.status.pembayaran');
+
+    Route::put('/admin/update/pesanan/{pesanan}', [AdminController::class, 'changeOrderStatus'])->name('admin.status.pesanan');
 });

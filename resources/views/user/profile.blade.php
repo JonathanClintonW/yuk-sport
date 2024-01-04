@@ -124,6 +124,10 @@
                                         <h2 class="font-semibold text-black">Status Pembayaran: </h2>
                                         <h2 class="text-gray-700 text-right">{{ $order->pembayaran->status_pembayaran }}</h2>
                                     </div>
+                                    <div class="flex justify-between mb-3 gap-5 px-2">
+                                        <h2 class="font-semibold text-black">Status Pesanan: </h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->status_pesanan }}</h2>
+                                    </div>
                                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                                 </li>
                             @endforeach

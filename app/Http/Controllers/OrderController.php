@@ -19,6 +19,7 @@ class OrderController extends Controller
             'tanggal_pesanan' => 'required|date',
             'total_jam' => 'required|numeric|min:1|max:10',
             'bukti_pembayaran' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+            
         ]);
 
         $lapanganId = $request->input('lapangan_id');
@@ -41,6 +42,7 @@ class OrderController extends Controller
         $pesanan->tanggal_pesanan = $tanggalPesan;
         $pesanan->total_jam = $totalJam;
         $pesanan->total_harga = $totalHarga;
+        $pesanan->status_pesanan = 'Pending';
         $pesanan->save();
 
         $pembayaran = new Pembayaran();

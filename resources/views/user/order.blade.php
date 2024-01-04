@@ -69,6 +69,7 @@
     </form>
 
     </section>
+    
     <script>
         const orderSection = document.getElementById('orderSection');
         const totalJamInput = document.getElementById('total_jam');

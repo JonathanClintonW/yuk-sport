@@ -108,11 +108,25 @@ class AdminController extends Controller
         return redirect()->route('admin.manage')->with('success', 'Lapangan deleted successfully');
     }
 
-    public function changeStatus(Request $request, Pembayaran $pembayaran)
+    public function changePaymentStatus(Request $request, Pembayaran $pembayaran)
     {
+        $request->validate([
+            'status_pembayaran' => 'required|in:Pending,Gagal,Berhasil',
+        ]);
         $pembayaran->status_pembayaran = $request->input('status_pembayaran');
         $pembayaran->save();
     
         return redirect()->back()->with('status', 'Pembayaran status updated successfully.');
+    }
+
+    public function changeOrderStatus(Request $request, DaftarPesanan $pesanan)
+    {
+        $request->validate([
+            'status_pesanan' => 'required|in:Pending,Gagal,Berhasil,Selesai',
+        ]);
+        $pesanan->status_pesanan = $request->input('status_pesanan');
+        $pesanan->save();
+    
+        return redirect()->back()->with('status', 'Pesanan status updated successfully.');
     }
 }

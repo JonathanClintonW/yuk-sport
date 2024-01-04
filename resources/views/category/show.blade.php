@@ -38,7 +38,7 @@
 
                     <div
                         class="mb-4 flex items-center justify-between px-4 py-3 rounded-2xl bg-white shadow-[0px_4px_16px_rgba(17,17,26,0.1),_0px_8px_24px_rgba(17,17,26,0.1),_0px_16px_56px_rgba(17,17,26,0.1)] transition-all duration-300 hover:scale-105">
-                        <h3 class="font-semibold text-lg md:text-xl">HARGA</h3>
+                        <h3 class="font-semibold text-lg md:text-xl mr-4">HARGA</h3>
                         <p class="font-semibold">Rp. {{ $lapangan->harga }}/jam</p>
                     </div>
 
