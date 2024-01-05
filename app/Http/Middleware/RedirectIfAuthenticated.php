@@ -22,7 +22,7 @@ class RedirectIfAuthenticated
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
                 if ($guard === 'admin') {
-                    return redirect('/admin-index'); // Adjust this to match the URL or route name for your admin dashboard
+                    return redirect('/admin-index');
                 }
                 return redirect(RouteServiceProvider::HOME);
             }

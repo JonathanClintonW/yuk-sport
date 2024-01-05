@@ -96,4 +96,27 @@
             {{ $orders->links() }}
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('login'))
+                Swal.fire({
+                    title: '',
+                    text: '{{ session('login') }}',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            @elseif (session('register'))
+                Swal.fire({
+                    title: '',
+                    text: '{{ session('register') }}',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            @endif
+        });
+    </script>
 @endsection

@@ -9,17 +9,6 @@
                     class="text-xl sm:text-2xl md:text-3xl font-bold text-center leading-normal mb-3 transition-all duration-200">
                     PROFILE</h1>
                 <div class="">
-                    @if (session('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-                    @if (session('error'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ session('error') }}
-                        </div>
-                    @endif
-
                     <form method="POST" action="{{ route('user.update-profile') }}" enctype="multipart/form-data">
                         @csrf
                         @method('PATCH')

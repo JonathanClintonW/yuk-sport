@@ -9,7 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Session;
 class RegisterController extends Controller
 {
     use RegistersUsers;
@@ -25,7 +26,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'string'],
+            'phone' => ['required', 'string', 'regex:/^\d+$/'],
             'address' => ['required', 'string'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -34,6 +35,10 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        $validator = $this->validator($data);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         $user = User::create([
             'name' => $data['name'],
             'phone' => $data['phone'],
@@ -43,7 +48,7 @@ class RegisterController extends Controller
         ]);
 
         Auth::guard('web')->login($user);
-        
+        Session::flash('register', 'Register Successful');
         return $user;
     }
 

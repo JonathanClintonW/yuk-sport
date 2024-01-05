@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\AdminRegisterController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 Auth::routes();
 
@@ -24,6 +25,12 @@ Route::get('/admin/register', [Controller::class, 'showAdminRegistration'])->nam
 // Route for Admin Storing Data
 Route::post('/admin/register', [AdminRegisterController::class, 'register'])->name('admin.register');
 
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])
+    ->name('password.reset');
+
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
+    ->name('password.update');
+    
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/category/badminton', [CategoryController::class, 'showBadminton'])->name('category.badminton');

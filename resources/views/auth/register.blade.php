@@ -15,7 +15,7 @@
         <div class="w-96 grid-cols-1">
             <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="grid grid-cols-2 justify-between items-center mx-1.5 mb-[20px]">
                     <label for="name" class="font-medium dark:text-text-light">{{ __('Nama') }}</label>
 
                     <input id="name" type="text"
@@ -23,14 +23,14 @@
                         name="name" value="{{ old('name') }}" required autocomplete="off">
 
                     @error('name')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback col-span-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
 
                 </div>
 
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="grid grid-cols-2 justify-between items-center mx-1.5 mb-[20px]">
                     <label for="address" class="font-medium dark:text-text-light">{{ __('Alamat') }}</label>
 
                     <input id="address" type="text"
@@ -38,29 +38,29 @@
                         name="address" value="{{ old('address') }}" required autocomplete="address">
 
                     @error('address')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback col-span-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
 
                 </div>
 
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="grid grid-cols-2 justify-between items-center mx-1.5 mb-[20px]">
                     <label for="phone" class="font-medium dark:text-text-light">{{ __('Telepon') }}</label>
 
-                    <input id="phone" type="text"
+                    <input id="phone" type="string" pattern="[0-9]*"
                         class="dark:text-text-light bg-transparent px-2.5 py-0.5 border-1 border-text-dark-green dark:border-primary-color hover:shadow-sm focus:shadow-sm focus:border-secondary-color focus:ring-0 rounded-lg @error('phone') is-invalid @enderror"
                         name="phone" value="{{ old('phone') }}" required autocomplete="phone">
 
                     @error('phone')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback col-span-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
 
                 </div>
 
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="grid grid-cols-2 justify-between items-center mx-1.5 mb-[20px]">
                     <label for="email" class="font-medium dark:text-text-light">{{ __('Alamat Email') }}</label>
 
                     <input id="email" type="email"
@@ -68,7 +68,7 @@
                         name="email" value="{{ old('email') }}" required autocomplete="email">
 
                     @error('email')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback col-span-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -76,7 +76,7 @@
 
                 </div>
 
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="grid grid-cols-2 justify-between items-center mx-1.5 mb-[20px]">
                     <label for="password" class="font-medium dark:text-text-light">{{ __('Password') }}</label>
 
                     <input id="password" type="password"
@@ -84,14 +84,14 @@
                         name="password" required autocomplete="new-password">
 
                     @error('password')
-                        <span class="invalid-feedback" role="alert">
+                        <span class="invalid-feedback col-span-2" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
 
                 </div>
 
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="grid grid-cols-2 justify-between items-center mx-1.5 mb-[20px]">
                     <label for="password-confirm"
                         class="font-medium dark:text-text-light">{{ __('Konfirmasi Password') }}</label>
 
@@ -101,12 +101,12 @@
 
                 </div>
                 <hr class="w-full h1 bg-black">
-                <div class="mx-1.5 mt-3 mb-20px">
+                <div class="mx-1.5 mt-3 mb-[20px]">
                     <p class="font-medium dark:text-text-light">Sudah memiliki akun? <a href="{{ route('login') }}"
                             class="text-text-dark-green dark:text-primary-color font-medium">Login</a></p>
                 </div>
 
-                <div class="flex justify-between items-center mx-1.5 mb-20px">
+                <div class="flex justify-between items-center mx-1.5 mb-[20px]">
                     <a href="{{ route('admin.register') }}" class="text-text-dark-green dark:text-primary-color font-medium">
                         {{ __('Daftar sebagai Admin') }}
                     </a>
@@ -126,4 +126,6 @@
     <div class="custom-gradient-bg flex-1">
         
     </div>
+
 @endsection
+

@@ -75,4 +75,28 @@
     <footer class="flex flex-col items-center  w-screen custom-gradient-bg pt-4 pb-4 bottom-0">
         <p class="text-secondary-color text-xs sm:text-base">&copy; YukSport All rights reserved</p>
     </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            @if (session('login'))
+                Swal.fire({
+                    title: '',
+                    text: '{{ session('login') }}',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            @elseif (session('register'))
+                Swal.fire({
+                    title: '',
+                    text: '{{ session('register') }}',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            @endif
+        });
+    </script>
+    
 @endsection

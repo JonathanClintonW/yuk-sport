@@ -35,7 +35,7 @@
             class="bg-white relative translate-y-[14px] px-3.5 mx-6 rounded-2xl flex h-12 items-center justify-between z-10">
 
             <a class="font-bold" href="{{ url('/') }}">
-                ASTRO TRAVEL
+                YukSport
             </a>
 
             <div class="lg:hidden flex">

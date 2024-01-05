@@ -28,9 +28,10 @@
             document.documentElement.classList.remove('dark')
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
-<body class="font-poppins text-black-color">
+<body class="font-poppins ">
     <div class="flex h-screen select-none" id="app">
 
         @yield('content')

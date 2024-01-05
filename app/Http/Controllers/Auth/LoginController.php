@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use Illuminate\Support\Facades\Session;
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
@@ -34,12 +34,14 @@ class LoginController extends Controller
 
         if ($user && Hash::check($request->password, $user->password)) {
             Auth::guard('web')->login($user);
+            Session::flash('login', 'Login Successful');
             return redirect()->route('index');
         } elseif ($admin && Hash::check($request->password, $admin->password)) {
             Auth::guard('admin')->login($admin);
+            Session::flash('login', 'Login Successful');
             return redirect()->route('admin.index');
         } else {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error', 'Email address and password are incorrect.');
         }
     }
 }

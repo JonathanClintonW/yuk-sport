@@ -65,51 +65,52 @@
                             Order</button>
                     </div>
                 </div>
-    </div>
-    </form>
 
-    </section>
-    
-    <script>
-        const orderSection = document.getElementById('orderSection');
-        const totalJamInput = document.getElementById('total_jam');
-        const totalHargaInput = document.getElementById('total_harga');
-        const currentDate = new Date().toISOString().slice(0, 16);
 
-        document.getElementById('tanggal_pesanan').min = currentDate;
+            </form>
 
-        totalJamInput.addEventListener('input', updateTotalHarga);
+        </section>
+        
+        <script>
+            const orderSection = document.getElementById('orderSection');
+            const totalJamInput = document.getElementById('total_jam');
+            const totalHargaInput = document.getElementById('total_harga');
+            const currentDate = new Date().toISOString().slice(0, 16);
 
-        function updateTotalHarga() {
-            const hargaPerJam = {{ $lapangan->harga }};
-            const totalJam = parseFloat(totalJamInput.value);
+            document.getElementById('tanggal_pesanan').min = currentDate;
 
-            if (!isNaN(totalJam) && totalJam >= 1 && totalJam <= 10) {
-                const totalHarga = hargaPerJam * totalJam;
-                totalHargaInput.value = `Rp. ${totalHarga.toLocaleString()}`;
-            } else {
-                totalHargaInput.value = '';
-            }
-        }
+            totalJamInput.addEventListener('input', updateTotalHarga);
 
-        function disableButton() {
-            const submitButton = document.getElementById('submitButton');
-            if (submitButton.disabled) {
-                event.preventDefault();
-                return false;
+            function updateTotalHarga() {
+                const hargaPerJam = {{ $lapangan->harga }};
+                const totalJam = parseFloat(totalJamInput.value);
+
+                if (!isNaN(totalJam) && totalJam >= 1 && totalJam <= 10) {
+                    const totalHarga = hargaPerJam * totalJam;
+                    totalHargaInput.value = `Rp. ${totalHarga.toLocaleString()}`;
+                } else {
+                    totalHargaInput.value = '';
+                }
             }
 
-            submitButton.disabled = true;
+            function disableButton() {
+                const submitButton = document.getElementById('submitButton');
+                if (submitButton.disabled) {
+                    event.preventDefault();
+                    return false;
+                }
 
-            submitButton.innerHTML = 'Processing...';
+                submitButton.disabled = true;
 
-            setTimeout(() => {
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Submit Order';
-            }, 5000);
+                submitButton.innerHTML = 'Processing...';
 
-            return true;
-        }
-    </script>
+                setTimeout(() => {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = 'Submit Order';
+                }, 5000);
+
+                return true;
+            }
+        </script>
     </div>
 @endsection

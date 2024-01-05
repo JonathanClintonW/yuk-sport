@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Mail;
+use App\Mail\OrderCreated;
 use App\Models\DaftarPesanan;
 use App\Models\Pembayaran;
 use App\Models\Lapangan;
@@ -53,7 +54,16 @@ class OrderController extends Controller
         $pembayaran->save();
 
         $user = User::find(auth()->user()->id);
-        $orders = $user->DaftarPesanan;
+
+        $orderDetails = [
+            'user_name' => $user->name,
+            'user_phone' => $user->phone,
+            'lapangan_name' => $lapangan->nama_lapangan,
+            'tanggal_pesanan' => $tanggalPesan,
+            'total_jam' => $totalJam,
+            'total_harga' => $totalHarga,
+        ];
+        Mail::to($user->email)->send(new OrderCreated($orderDetails));
         return redirect()->route('user.profile')->with('success', 'Order submitted successfully');
     }
 
