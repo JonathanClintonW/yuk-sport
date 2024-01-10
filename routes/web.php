@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
@@ -11,7 +12,8 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 
-Auth::routes();
+
+Auth::routes(['verify' => true]);
 
 Route::get('/index', [Controller::class, 'showIndex'])->name('index');
 
@@ -30,7 +32,7 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
-    
+
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/category/badminton', [CategoryController::class, 'showBadminton'])->name('category.badminton');

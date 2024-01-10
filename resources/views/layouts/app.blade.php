@@ -141,6 +141,12 @@
                             <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
                                 href="{{ route('lapangan') }}">LAPANGAN</a>
                         </li>
+                        @auth('web')
+                        <li class="mb-1">
+                            <a class="block p-4 text-sm font-semibold text-gray-500 hover:bg-blue-50 hover:text-primary-color rounded"
+                                href="{{ route('user.profile') }}">PROFILE</a>
+                        </li>
+                        @endauth
                     </ul>
                 </div>
                 <div class="mt-auto">

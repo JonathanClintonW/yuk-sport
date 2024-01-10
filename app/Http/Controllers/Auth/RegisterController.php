@@ -9,8 +9,10 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Session;
+// use Illuminate\Validation\ValidationException;
+use Illuminate\Auth\Events\Registered;
+
 class RegisterController extends Controller
 {
     use RegistersUsers;
@@ -46,7 +48,9 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+        event(new Registered($user));
 
+        $user->sendEmailVerificationNotification();
         Auth::guard('web')->login($user);
         Session::flash('register', 'Register Successful');
         return $user;

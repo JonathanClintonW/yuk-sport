@@ -17,6 +17,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\VerifyCsrfToken::class,
+
     ];
 
     protected $middlewareGroups = [
@@ -55,11 +56,12 @@ class Kernel extends HttpKernel
         'precognitive' => \Illuminate\Foundation\Http\Middleware\HandlePrecognitiveRequests::class,
         'signed' => \App\Http\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
     ];
 
     protected $routeMiddleware = [
         'admin' => \Illuminate\Auth\Middleware\Authenticate::class,
         'timeout' => \App\Http\Middleware\TimeoutMiddleware::class,
+
     ];
 }

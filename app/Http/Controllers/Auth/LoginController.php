@@ -33,9 +33,13 @@ class LoginController extends Controller
         $admin = Admin::where('email', $request->email)->first();
 
         if ($user && Hash::check($request->password, $user->password)) {
-            Auth::guard('web')->login($user);
-            Session::flash('login', 'Login Successful');
-            return redirect()->route('index');
+            if ($user->email_verified_at) {
+                Auth::guard('web')->login($user);
+                Session::flash('login', 'Login Successful');
+                return redirect()->route('index');
+            } else {
+                return redirect()->route('login')->with('error', 'Email address is not verified.');
+            }
         } elseif ($admin && Hash::check($request->password, $admin->password)) {
             Auth::guard('admin')->login($admin);
             Session::flash('login', 'Login Successful');
