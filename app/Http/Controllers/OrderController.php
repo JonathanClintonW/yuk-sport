@@ -44,6 +44,7 @@ class OrderController extends Controller
         $pesanan->total_jam = $totalJam;
         $pesanan->total_harga = $totalHarga;
         $pesanan->status_pesanan = 'Pending';
+        $pesanan->pembatalan = 0;
         $pesanan->save();
 
         $pembayaran = new Pembayaran();
@@ -70,6 +71,22 @@ class OrderController extends Controller
     public function showOrder($lapanganId)
     {
         $lapangan = Lapangan::find($lapanganId);
+        
         return view('user.order', compact('lapangan'));
+    }
+
+    public function cancelOrder($orderId)
+    {
+        $order = DaftarPesanan::findOrFail($orderId);
+
+        if ($order->user_id == auth()->user()->id) {
+            $order->status_pesanan = 'Di batalkan';
+            $order->pembatalan = 1;
+            $order->save();
+
+            return redirect()->route('user.profile')->with('success', 'Pesanan berhasil di batalkan');
+        } else {
+            return response()->json(['error' => 'Unauthorized'], 403);
+        }
     }
 }

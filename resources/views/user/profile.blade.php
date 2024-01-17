@@ -95,11 +95,13 @@
                                 <li class="grid items-center">
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Lapangan: </h2>
-                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->nama_lapangan ?? 'Data Tidak Ditemukan' }}</h2>
+                                        <h2 class="text-gray-700 text-right">
+                                            {{ $order->lapangan->nama_lapangan ?? 'Data Tidak Ditemukan' }}</h2>
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Alamat: </h2>
-                                        <h2 class="text-gray-700 text-right">{{ $order->lapangan->alamat ?? 'Data Tidak Ditemukan' }}</h2>
+                                        <h2 class="text-gray-700 text-right">
+                                            {{ $order->lapangan->alamat ?? 'Data Tidak Ditemukan' }}</h2>
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Total Jam: </h2>
@@ -107,16 +109,26 @@
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Total Harga: </h2>
-                                        <h2 class="text-gray-700 text-right">Rp. {{ number_format($order->total_harga) }}</h2>
+                                        <h2 class="text-gray-700 text-right">Rp. {{ number_format($order->total_harga) }}
+                                        </h2>
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Status Pembayaran: </h2>
-                                        <h2 class="text-gray-700 text-right">{{ $order->pembayaran->status_pembayaran }}</h2>
+                                        <h2 class="text-gray-700 text-right">{{ $order->pembayaran->status_pembayaran }}
+                                        </h2>
                                     </div>
                                     <div class="flex justify-between mb-3 gap-5 px-2">
                                         <h2 class="font-semibold text-black">Status Pesanan: </h2>
                                         <h2 class="text-gray-700 text-right">{{ $order->status_pesanan }}</h2>
                                     </div>
+                                    @if($order->pembatalan != 1)
+                                    <div>
+                                        <button
+                                            class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-green-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-text-light px-4 py-2 rounded-md"
+                                            onclick="confirmCancellation({{ $order->id }})">Batalkan
+                                            Pesanan</button>
+                                    </div>
+                                    @endif
                                     <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
                                 </li>
                             @endforeach
@@ -128,6 +140,9 @@
 
             </section>
         </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
         <script>
             document.querySelector('#password-toggle').addEventListener('click', function() {
                 togglePasswordVisibility('password');
@@ -141,6 +156,44 @@
                 const passwordInput = document.getElementById(inputId);
                 passwordInput.type = passwordInput.type === 'password' ? 'text' : 'password';
             }
+
+            function confirmCancellation(orderId) {
+                Swal.fire({
+                    title: 'Apakah anda ingin membatalkan pesanan?',
+                    text: 'Anda tidak dapat mengembalikannya!',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Ya, batalkan pesanan!'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                        const form = document.createElement('form');
+                        form.method = 'POST';
+                        form.action = `/cancel-order/${orderId}`;
+
+                        const csrfTokenInput = document.createElement('input');
+                        csrfTokenInput.type = 'hidden';
+                        csrfTokenInput.name = '_token';
+                        csrfTokenInput.value = '{{ csrf_token() }}';
+                        form.appendChild(csrfTokenInput);
+
+                        document.body.appendChild(form);
+                        form.submit();
+                    }
+                });
+            }
+
+            @if(session('success'))
+                Swal.fire({
+                    title: 'Success!',
+                    text: '{{ session('success') }}',
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer: 3000
+                });
+            @endif
         </script>
     </div>
 @endsection

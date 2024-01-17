@@ -19,6 +19,7 @@ class Lapangan extends Model
         'harga',
         'path_gambar',
         'deskripsi',
+        'admin_id',
     ];
 
     protected $dates = ['deleted_at'];

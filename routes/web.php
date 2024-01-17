@@ -56,6 +56,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/order/{lapanganId}', [OrderController::class, 'showOrder'])->name('order');
 
     Route::post('/order/create', [OrderController::class, 'create'])->name('order.create');
+
+    Route::post('/cancel-order/{orderId}', [OrderController::class, 'cancelOrder'])->name('cancel-order');
 });
 
 Route::middleware(['admin'])->group(function () {

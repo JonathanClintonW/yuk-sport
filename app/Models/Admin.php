@@ -36,6 +36,6 @@ class Admin extends Authenticatable
 
     public function lapangan()
     {
-        return $this->hasMany(Lapangan::class);
+        return $this->hasMany(Lapangan::class, 'admin_id');
     }
 }

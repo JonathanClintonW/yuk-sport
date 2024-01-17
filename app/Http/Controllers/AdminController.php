@@ -17,15 +17,28 @@ class AdminController extends Controller
 
     public function showAdminIndex()
     {
-        $orders = DaftarPesanan::with(['lapangan', 'user'])->simplePaginate(5);
-        return view('/admin/admin-index', compact('orders'));
+        $admin = Auth::guard('admin')->user();
+
+        if ($admin) {
+            $orders = DaftarPesanan::whereIn('lapangan_id', $admin->lapangan->pluck('id'))->with(['lapangan', 'user'])->simplePaginate(5);
+    
+            return view('/admin/admin-index', compact('orders'));
+        } else {
+            return redirect()->route('admin.login')->with('error', 'Please log in to view orders');
+        }
     }
 
     public function showManageProduct()
     {
-        $lapangans = Lapangan::all();
-
-        return view('admin.manage-product', compact('lapangans'));
+        $admin = Auth::guard('admin')->user();
+    
+        if ($admin) {
+            $lapangans = $admin->lapangan;
+    
+            return view('admin.manage-product', compact('lapangans'));
+        } else {
+            return redirect()->route('admin.login')->with('error', 'Please log in to manage products');
+        }
     }
 
     public function showAddProduct()
@@ -35,9 +48,15 @@ class AdminController extends Controller
 
     public function showListProduct()
     {
-        $lapangans = Lapangan::all();
+        $admin = Auth::guard('admin')->user();
 
-        return view('/admin/list-product', compact('lapangans'));
+        if ($admin) {
+            $lapangans = $admin->lapangan;
+    
+            return view('/admin/list-product', compact('lapangans'));
+        } else {
+            return redirect()->route('admin.login')->with('error', 'Please log in to view lapangans');
+        }
     }
 
     public function store(Request $request)
@@ -52,7 +71,10 @@ class AdminController extends Controller
             'path_gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
+        if ($admin = Auth::guard('admin')->user()) {
         $lapangan = new Lapangan($validatedData);
+
+        $lapangan->admin_id = $admin->id;
 
         if ($request->hasFile('path_gambar')) {
             $path_gambar = [];
@@ -63,9 +85,14 @@ class AdminController extends Controller
             }
             $lapangan->path_gambar = json_encode($path_gambar);
         }
+        
         $lapangan->save();
 
-        return redirect()->route('admin.manage')->with('success', 'Trip created successfully');
+            return redirect()->route('admin.manage')->with('success', 'Trip created successfully');
+        } else {
+
+            return redirect()->route('admin.login')->with('error', 'Please log in to add a lapangan');
+        }
     }
 
     public function edit(Lapangan $lapangan)

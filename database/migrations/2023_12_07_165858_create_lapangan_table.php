@@ -21,6 +21,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->softDeletes();
             $table->timestamps();
+            $table->unsignedBigInteger('admin_id');
         });
     }
 
