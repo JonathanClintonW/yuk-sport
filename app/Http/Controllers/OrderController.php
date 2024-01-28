@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\OrderCreated;
+use App\Mail\OrderCancelled;
 use App\Models\DaftarPesanan;
 use App\Models\Pembayaran;
 use App\Models\Lapangan;
@@ -78,12 +79,24 @@ class OrderController extends Controller
     public function cancelOrder($orderId)
     {
         $order = DaftarPesanan::findOrFail($orderId);
-
+        $daftarPesanan = DaftarPesanan::with('lapangan.admin')->find($orderId);
+        $admin = $daftarPesanan->lapangan->admin;
+        
         if ($order->user_id == auth()->user()->id) {
             $order->status_pesanan = 'Di batalkan';
             $order->pembatalan = 1;
             $order->save();
-
+            
+            $cancelDetails = [
+                'user_name' => $order->user->name,
+                'user_phone' => $order->user->phone,
+                'lapangan_name' => $order->lapangan->nama_lapangan,
+                'alamat' => $order->lapangan->alamat,
+                'status' => $order->status_pesanan,
+                'tanggal_pesanan' => $order->tanggal_pesanan,
+            ];
+        
+            Mail::to($admin->email)->send(new OrderCancelled($cancelDetails));
             return redirect()->route('user.profile')->with('success', 'Pesanan berhasil di batalkan');
         } else {
             return response()->json(['error' => 'Unauthorized'], 403);

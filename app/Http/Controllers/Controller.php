@@ -27,4 +27,9 @@ class Controller extends BaseController
     {
         return view('lapangan');
     }  
+
+    public function showVerify()
+    {
+        return view('auth.verify');
+    }
 }

@@ -12,7 +12,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 
-
 Auth::routes(['verify' => true]);
 
 Route::get('/index', [Controller::class, 'showIndex'])->name('index');
@@ -32,6 +31,9 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showRese
 
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
     ->name('password.update');
+
+Route::get('/verify', [Controller::class, 'showVerify'])
+    ->name('verify');
 
 Route::middleware(['auth'])->group(function () {
 
