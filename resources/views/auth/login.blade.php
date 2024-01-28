@@ -54,6 +54,11 @@
                         {{ __('Login') }}
                     </button>
                 </div>
+                <div>
+                    <a class="" href="{{ '/auth/redirect' }}">
+                        <img src="{{ asset('images/7123025_logo_google_g_icon.svg') }}" alt="Google Icon" width="35" height="35">
+                    </a>
+                </div>
             </form>
         </div>
 

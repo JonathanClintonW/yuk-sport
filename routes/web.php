@@ -11,6 +11,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\Auth\AdminRegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\Auth\SocialiteController;
 
 Auth::routes(['verify' => true]);
 
@@ -34,6 +35,10 @@ Route::post('/reset-password', [ResetPasswordController::class, 'reset'])
 
 Route::get('/verify', [Controller::class, 'showVerify'])
     ->name('verify');
+
+    Route::get('/auth/redirect', 'App\Http\Controllers\Auth\LoginController@redirectToProvider');
+    Route::get('/auth/callback', 'App\Http\Controllers\Auth\LoginController@handleProviderCallback');
+    
 
 Route::middleware(['auth'])->group(function () {
 

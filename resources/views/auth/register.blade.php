@@ -115,8 +115,13 @@
                         class="hover:scale-110 duration-300 ease-in-out font-medium custom-gradient-bg shadow-green-900 shadow-[0_0_20px_0_rgba(0,0,0,0.3)] hover:shadow-secondary-color text-secondary-color px-4 py-1 rounded-md  ">
                         {{ __('Register') }}
                     </button>
-
                 </div>
+                <div>
+                    <a class="" href="{{ '/auth/redirect' }}">
+                        <img src="{{ asset('images/7123025_logo_google_g_icon.svg') }}" alt="Google Icon" width="35" height="35">
+                    </a>
+                </div>
+
             </form>
 
 
